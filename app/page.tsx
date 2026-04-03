@@ -21,10 +21,10 @@ export default function HeroPage() {
       <LanguageToggle />
 
       <div className="relative z-10 text-center px-8 py-10">
-        <p className="font-sans font-thin text-[9px] tracking-[5px] text-sage uppercase mb-1">
+        <p className="font-sans text-[9px] tracking-[5px] text-sage uppercase mb-1">
           {t.hero_ceremony_label}
         </p>
-        <p className="font-sans font-thin text-[8px] tracking-[4px] text-gray-400 uppercase mb-8">
+        <p className="font-sans text-[8px] tracking-[4px] text-gray-400 uppercase mb-8">
           {t.hero_ceremony_sub}
         </p>
 
@@ -34,20 +34,20 @@ export default function HeroPage() {
 
         <div className="w-14 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto my-5" />
 
-        <p className="font-sans font-thin text-[9px] tracking-[4px] text-gray-600 uppercase mb-1">
+        <p className="font-sans text-[9px] tracking-[4px] text-gray-600 uppercase mb-1">
           06 June 2026
         </p>
-        <p className="font-sans font-thin text-[9px] tracking-[3px] text-gray-400 uppercase mb-9">
+        <p className="font-sans text-[9px] tracking-[3px] text-gray-400 uppercase mb-9">
           20 Zulhijjah 1447
         </p>
 
         <button
           onClick={handleCta}
-          className="bg-sage text-white font-sans font-thin text-[9px] tracking-[3px] uppercase px-7 py-3 rounded-full"
+          className="bg-sage text-white font-sans text-[9px] tracking-[3px] uppercase px-7 py-3 rounded-full"
         >
           {t.hero_cta}
         </button>
-        <p className="font-sans font-thin text-[9px] text-gray-300 mt-3 tracking-wide">
+        <p className="font-sans text-[9px] text-gray-300 mt-3 tracking-wide">
           {t.hero_cta_sub}
         </p>
       </div>

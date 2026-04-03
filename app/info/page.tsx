@@ -43,13 +43,13 @@ export default function InfoPage() {
         <LanguageToggle />
         <button
           onClick={handleChange}
-          className="absolute top-5 right-6 z-10 font-sans font-thin text-[9px] tracking-wide text-gray-400"
+          className="absolute top-5 right-6 z-10 font-sans text-[9px] tracking-wide text-gray-400"
         >
           {t.info_change}
         </button>
 
         <div className="relative z-10">
-          <p className="font-sans font-thin text-[9px] tracking-[3px] text-sage uppercase mb-2">{greeting}</p>
+          <p className="font-sans text-[9px] tracking-[3px] text-sage uppercase mb-2">{greeting}</p>
           <div className="font-script text-4xl text-gold leading-tight">Hazim</div>
           <div className="font-serif text-xl text-gray-400 font-light my-0.5">&amp;</div>
           <div className="font-script text-4xl text-gold leading-tight">Idayu</div>
@@ -68,7 +68,7 @@ export default function InfoPage() {
         <section className="px-6 py-5 border-b border-stone-100">
           <SectionTitle>{t.section_venue}</SectionTitle>
           <h2 className="font-serif text-xl text-gray-800 mb-1">{VENUE.name}</h2>
-          <p className="font-sans font-thin text-[10px] text-gray-500 leading-6 mb-3 whitespace-pre-line">
+          <p className="font-sans text-[10px] text-gray-500 leading-6 mb-3 whitespace-pre-line">
             {VENUE.address}
           </p>
           <div className="rounded-xl overflow-hidden h-36 mb-2 bg-stone-100">
@@ -87,7 +87,7 @@ export default function InfoPage() {
             href={VENUE.googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-sans font-thin text-[9px] tracking-[2px] text-sage uppercase border-b border-sage/40 pb-0.5"
+            className="font-sans text-[9px] tracking-[2px] text-sage uppercase border-b border-sage/40 pb-0.5"
           >
             {t.venue_directions}
           </a>
@@ -131,7 +131,7 @@ export default function InfoPage() {
 function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-center gap-2 mb-3">
-      <span className="font-sans font-thin text-[8px] tracking-[3px] text-sage uppercase whitespace-nowrap">
+      <span className="font-sans text-[8px] tracking-[3px] text-sage uppercase whitespace-nowrap">
         {children}
       </span>
       <div className="flex-1 h-px bg-stone-200" />
@@ -161,7 +161,7 @@ function ContactRow({
       </div>
       <div>
         <p className="font-sans text-xs text-gray-800">{name}</p>
-        <p className="font-sans font-thin text-[9px] text-gray-400 tracking-wide mt-0.5">{role}</p>
+        <p className="font-sans text-[9px] text-gray-400 tracking-wide mt-0.5">{role}</p>
         <p className="font-sans font-light text-[11px] text-sage mt-0.5">{phone}</p>
       </div>
     </div>
