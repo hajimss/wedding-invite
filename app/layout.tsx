@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
-import { Pinyon_Script, Cormorant_Garamond, Josefin_Sans } from 'next/font/google'
+import { Great_Vibes, Cormorant_Garamond, Josefin_Sans } from 'next/font/google'
 import { LanguageProvider } from '@/lib/language-context'
 import './globals.css'
 
-const pinyonScript = Pinyon_Script({
+const greatVibes = Great_Vibes({
   weight: '400',
   subsets: ['latin'],
-  variable: '--font-pinyon',
+  variable: '--font-great-vibes',
 })
 
 const cormorant = Cormorant_Garamond({
@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body
-        className={`${pinyonScript.variable} ${cormorant.variable} ${josefinSans.variable} font-sans`}
+        className={`${greatVibes.variable} ${cormorant.variable} ${josefinSans.variable} font-sans`}
       >
         <LanguageProvider>{children}</LanguageProvider>
       </body>
