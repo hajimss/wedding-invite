@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(/Users/hazim/.claude/plugins/cache/claude-plugins-official/superpowers/5.0.7/skills/brainstorming/scripts/start-server.sh --project-dir /Users/hazim/Documents/Projects/wedding)",
+      "Bash(export PATH=\"$PATH:/usr/local/bin:/opt/homebrew/bin\")",
+      "Read(//Users/hazim/.nvm/versions/node/**)",
+      "Read(//Users/hazim/.volta/**)",
+      "Read(//Users/hazim/**)",
+      "Bash(export PATH=\"$HOME/.nvm/versions/node/v22.16.0/bin:$PATH\")",
+      "Bash(npm --version)",
+      "Bash(npx --version)",
+      "Bash(npx create-next-app@latest . --typescript --tailwind --eslint --app --no-src-dir --import-alias \"@/*\")",
+      "Bash(mv /Users/hazim/Documents/Projects/wedding/.superpowers /tmp/wedding_superpowers_backup)",
+      "Bash(mv /Users/hazim/Documents/Projects/wedding/docs /tmp/wedding_docs_backup)"
+    ]
+  }
+}
