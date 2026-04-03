@@ -48,8 +48,8 @@ export default function MessageForm() {
             <path d="M2 3l10 9 10-9" />
           </svg>
         </div>
-        <p className="font-serif text-lg text-gray-800">{t.msg_success_title}</p>
-        <p className="font-sans text-[9px] text-gray-400 tracking-wide mt-1">{t.msg_success_sub} ✦</p>
+        <p className="font-serif text-[20px] text-gray-800">{t.msg_success_title}</p>
+        <p className="font-sans text-[10px] text-gray-400 tracking-wide mt-1">{t.msg_success_sub} ✦</p>
       </div>
     )
   }
@@ -62,10 +62,10 @@ export default function MessageForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <p className="font-sans text-[10px] text-gray-500 leading-6 mb-3">{t.msg_intro}</p>
+      <p className="font-sans text-[11px] text-gray-500 leading-6 mb-3">{t.msg_intro}</p>
 
       <div className="mb-3">
-        <label className="block font-sans text-[8px] tracking-[2px] text-gray-400 uppercase mb-1.5">
+        <label className="block font-sans text-[9px] tracking-[2px] text-gray-400 uppercase mb-1.5">
           {t.msg_name_label}
         </label>
         <input
@@ -74,11 +74,11 @@ export default function MessageForm() {
           onChange={e => setName(e.target.value)}
           placeholder={t.msg_name_placeholder}
           required
-          className="w-full bg-white border border-stone-200 rounded-lg px-3 py-2 font-sans text-[11px] text-gray-800 outline-none focus:border-sage"
+          className="w-full bg-white border border-stone-200 rounded-lg px-3 py-2 font-sans text-[12px] text-gray-800 outline-none focus:border-sage"
         />
       </div>
 
-      <label className="block font-sans text-[8px] tracking-[2px] text-gray-400 uppercase mb-1.5">
+      <label className="block font-sans text-[9px] tracking-[2px] text-gray-400 uppercase mb-1.5">
         {t.msg_send_to}
       </label>
       <div className="flex gap-2 mb-3.5">
@@ -93,14 +93,14 @@ export default function MessageForm() {
                 : 'border-stone-200 bg-white'
             }`}
           >
-            <p className="font-sans text-[11px] text-gray-800">{r.label}</p>
-            <p className="font-sans text-[8px] text-gray-400 tracking-wide mt-0.5">{r.sub}</p>
+            <p className="font-sans text-[12px] text-gray-800">{r.label}</p>
+            <p className="font-sans text-[9px] text-gray-400 tracking-wide mt-0.5">{r.sub}</p>
           </button>
         ))}
       </div>
 
       <div className="mb-4">
-        <label className="block font-sans text-[8px] tracking-[2px] text-gray-400 uppercase mb-1.5">
+        <label className="block font-sans text-[9px] tracking-[2px] text-gray-400 uppercase mb-1.5">
           {t.msg_message_label}
         </label>
         <textarea
@@ -109,18 +109,18 @@ export default function MessageForm() {
           placeholder={t.msg_message_placeholder}
           rows={4}
           required
-          className="w-full bg-white border border-stone-200 rounded-lg px-3 py-2 font-sans text-[11px] text-gray-800 outline-none focus:border-sage resize-none"
+          className="w-full bg-white border border-stone-200 rounded-lg px-3 py-2 font-sans text-[12px] text-gray-800 outline-none focus:border-sage resize-none"
         />
       </div>
 
       {status === 'error' && (
-        <p className="font-sans text-[9px] text-red-400 mb-2">{t.msg_error}</p>
+        <p className="font-sans text-[10px] text-red-400 mb-2">{t.msg_error}</p>
       )}
 
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="w-full bg-sage text-white font-sans text-[10px] tracking-[3px] uppercase py-3 rounded-xl disabled:opacity-60"
+        className="w-full bg-sage text-white font-sans text-[11px] tracking-[3px] uppercase py-3 rounded-xl disabled:opacity-60"
       >
         {status === 'loading' ? '...' : t.msg_send_btn}
       </button>
