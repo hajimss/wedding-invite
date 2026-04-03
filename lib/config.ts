@@ -1,17 +1,17 @@
 // Update all values below before deploying
 
 export const VENUE = {
-  name: 'Dewan Serbaguna Indah',
-  address: '123 Jalan Kenangan, Taman Indah,\n43000 Kajang, Selangor',
+  name: 'Begonia Pavilion',
+  address: '1 Pasir Ris Cl, Singapore 519599',
   // Get embed URL from Google Maps → Share → Embed a map → copy src value
-  googleMapsEmbed: 'https://www.google.com/maps/embed?pb=YOUR_EMBED_ID_HERE',
+  googleMapsEmbed: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.666914089104!2d103.95401!3d1.3765304!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da3db427a54c63%3A0xf0ba63dc0775b721!2sBegonia%20Pavilion!5e0!3m2!1sen!2ssg!4v1775230705260!5m2!1sen!2ssg',
   // Get directions URL from Google Maps → Share → Copy link
-  googleMapsUrl: 'https://maps.google.com/?q=Dewan+Serbaguna+Indah+Kajang',
+  googleMapsUrl: 'https://maps.app.goo.gl/pjeHNTvDtJJqwbJX9',
 }
 
 export const CONTACTS = {
-  hazim: { phone: '+60 12-345 6789', initial: 'H' },
-  idayu: { phone: '+60 19-876 5432', initial: 'I' },
+  hazim: { phone: '+65 97221283', initial: 'H' },
+  idayu: { phone: '+65 9xxxxxxx', initial: 'I' },
 }
 
 export const STORY =
