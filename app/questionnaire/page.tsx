@@ -35,7 +35,7 @@ export default function QuestionnairePage() {
       {step === 2 && (
         <button
           onClick={() => setStep(1)}
-          className="absolute top-5 right-6 z-10 font-sans text-[10px] tracking-wide text-gray-400"
+          className="absolute top-5 right-6 z-10 font-sans font-thin text-[10px] tracking-wide text-gray-400"
         >
           {t.q_back}
         </button>
@@ -48,14 +48,14 @@ export default function QuestionnairePage() {
           <div className={`w-1.5 h-1.5 rounded-full transition-colors ${step === 2 ? 'bg-sage' : 'bg-gray-200'}`} />
         </div>
 
-        <p className="font-sans text-[8px] tracking-[3px] text-sage uppercase mb-2">
+        <p className="font-sans font-thin text-[8px] tracking-[3px] text-sage uppercase mb-2">
           {t.q_step(step, 2)}
         </p>
 
         {step === 1 ? (
           <>
             <h1 className="font-serif text-2xl text-gray-800 font-light mb-2">{t.q1_question}</h1>
-            <p className="font-sans text-[9px] text-gray-400 tracking-wide mb-5">{t.q1_sub}</p>
+            <p className="font-sans font-thin text-[9px] text-gray-400 tracking-wide mb-5">{t.q1_sub}</p>
             <div className="w-10 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-7" />
             <ChoiceButton title={t.q1_family} sub={t.q1_family_sub} onClick={handleFamily} />
             <ChoiceButton title={t.q1_friends} sub={t.q1_friends_sub} onClick={() => setStep(2)} />
@@ -63,7 +63,7 @@ export default function QuestionnairePage() {
         ) : (
           <>
             <h1 className="font-serif text-2xl text-gray-800 font-light mb-2">{t.q2_question}</h1>
-            <p className="font-sans text-[9px] text-gray-400 tracking-wide mb-5">{t.q2_sub}</p>
+            <p className="font-sans font-thin text-[9px] text-gray-400 tracking-wide mb-5">{t.q2_sub}</p>
             <div className="w-10 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-7" />
             <ChoiceButton title={t.q2_couple} sub={t.q2_couple_sub} onClick={handleFriendsCouple} />
             <ChoiceButton title={t.q2_parents} sub={t.q2_parents_sub} onClick={handleFriendsParents} />
@@ -90,7 +90,7 @@ function ChoiceButton({
     >
       <div>
         <p className="font-serif text-lg text-gray-800">{title}</p>
-        <p className="font-sans text-[9px] text-gray-400 tracking-wide mt-0.5">{sub}</p>
+        <p className="font-sans font-thin text-[9px] text-gray-400 tracking-wide mt-0.5">{sub}</p>
       </div>
       <div className="w-5 h-5 rounded-full border border-stone-200 flex-shrink-0" />
     </button>

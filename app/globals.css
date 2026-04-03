@@ -4,9 +4,9 @@
   --color-sage: #7a9e87;
   --color-gold: #c9a84c;
   --color-cream: #faf8f5;
-  --font-script: var(--font-great-vibes), cursive;
+  --font-script: var(--font-pinyon), cursive;
   --font-serif: var(--font-cormorant), Georgia, serif;
-  --font-sans: var(--font-montserrat), system-ui, sans-serif;
+  --font-sans: var(--font-josefin), system-ui, sans-serif;
 }
 
 html,
