@@ -36,6 +36,25 @@ describe('localStorage helpers', () => {
   })
 })
 
+describe('localStorage error paths', () => {
+  afterEach(() => jest.restoreAllMocks())
+
+  it('saveGuestType does not throw when localStorage.setItem throws', () => {
+    jest.spyOn(Storage.prototype, 'setItem').mockImplementation(() => { throw new Error('storage error') })
+    expect(() => saveGuestType('family')).not.toThrow()
+  })
+
+  it('loadGuestType returns null when localStorage.getItem throws', () => {
+    jest.spyOn(Storage.prototype, 'getItem').mockImplementation(() => { throw new Error('storage error') })
+    expect(loadGuestType()).toBeNull()
+  })
+
+  it('clearGuestType does not throw when localStorage.removeItem throws', () => {
+    jest.spyOn(Storage.prototype, 'removeItem').mockImplementation(() => { throw new Error('storage error') })
+    expect(() => clearGuestType()).not.toThrow()
+  })
+})
+
 describe('TIMESLOTS', () => {
   it('maps family to 10:00 AM', () => expect(TIMESLOTS.family).toBe('10:00 AM'))
   it('maps friends-parents to 12:00 PM', () => expect(TIMESLOTS['friends-parents']).toBe('12:00 PM'))
