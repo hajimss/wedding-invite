@@ -17,3 +17,8 @@ export const CONTACTS = {
 export const STORY =
   'What started as a chance meeting became a lifetime of love. ' +
   'We are overjoyed to celebrate this moment with the people who matter most to us.'
+
+export const SPOTIFY_PLAYLIST = {
+  url: 'https://open.spotify.com/playlist/0soLSTkWnbj8aYnB71n2Cf',
+  embedUrl: 'https://open.spotify.com/embed/playlist/0soLSTkWnbj8aYnB71n2Cf?utm_source=generator',
+}
