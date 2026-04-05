@@ -9,6 +9,7 @@ import BotanicalBackground from '@/components/BotanicalBackground'
 import LanguageToggle from '@/components/LanguageToggle'
 import TimeslotBadge from '@/components/TimeslotBadge'
 import MessageForm from '@/components/MessageForm'
+import SpotifyPlaylist from '@/components/SpotifyPlaylist'
 import type { GuestType } from '@/lib/guest-type'
 
 export default function InfoPage() {
@@ -103,6 +104,12 @@ export default function InfoPage() {
         <section className="px-6 py-5 border-b border-stone-100">
           <SectionTitle>{t.section_message}</SectionTitle>
           <MessageForm />
+        </section>
+
+        {/* Playlist */}
+        <section className="px-6 py-5 border-b border-stone-100">
+          <SectionTitle>{t.section_playlist}</SectionTitle>
+          <SpotifyPlaylist />
         </section>
 
         {/* Contact */}

@@ -47,6 +47,9 @@ export type T = {
   msg_error: string
   contact_groom_role: string
   contact_bride_role: string
+  section_playlist: string
+  playlist_intro: string
+  playlist_cta: string
   lang_label: string
 }
 
@@ -98,6 +101,10 @@ const en: T = {
   msg_error: 'Something went wrong. Please try again.',
   contact_groom_role: 'Groom · Pengantin Lelaki',
   contact_bride_role: 'Bride · Pengantin Perempuan',
+  section_playlist: 'Our Playlist',
+  playlist_intro:
+    'Add a song to our wedding playlist — open Spotify and contribute a track that means something to you.',
+  playlist_cta: 'Add a Song →',
   lang_label: 'MY',
 }
 
@@ -149,6 +156,10 @@ const my: T = {
   msg_error: 'Ralat berlaku. Sila cuba lagi.',
   contact_groom_role: 'Pengantin Lelaki · Groom',
   contact_bride_role: 'Pengantin Perempuan · Bride',
+  section_playlist: 'Senarai Lagu Kami',
+  playlist_intro:
+    'Tambah lagu ke senarai lagu perkahwinan kami — buka Spotify dan sertakan lagu yang bermakna bagi anda.',
+  playlist_cta: 'Tambah Lagu →',
   lang_label: 'EN',
 }
 
