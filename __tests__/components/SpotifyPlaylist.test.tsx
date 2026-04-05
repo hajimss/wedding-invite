@@ -22,9 +22,9 @@ describe('SpotifyPlaylist', () => {
 
   it('renders the Spotify iframe embed', () => {
     render(<Wrapper />)
-    const iframe = document.querySelector('iframe')
+    const iframe = screen.getByTitle('Wedding playlist') as HTMLIFrameElement
     expect(iframe).toBeInTheDocument()
-    expect(iframe?.src).toContain('open.spotify.com/embed/playlist/0soLSTkWnbj8aYnB71n2Cf')
+    expect(iframe.src).toContain('open.spotify.com/embed/playlist/0soLSTkWnbj8aYnB71n2Cf')
   })
 
   it('renders the CTA link pointing to the Spotify playlist', () => {
