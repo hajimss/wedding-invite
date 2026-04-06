@@ -11,14 +11,13 @@ export const VENUE = {
 
 export const CONTACTS = {
   hazim: { phone: '+65 97221283', initial: 'H' },
-  idayu: { phone: '+65 9xxxxxxx', initial: 'I' },
+  idayu: { phone: '+65 96548356', initial: 'I' },
 }
 
 export const STORY =
-  'What started as a chance meeting became a lifetime of love. ' +
-  'We are overjoyed to celebrate this moment with the people who matter most to us.'
+  'We\'ve shared a journey that brought us here today, and we couldn\'t be more grateful. Having you with us as we celebrate this moment would make it even more meaningful.'
 
 export const SPOTIFY_PLAYLIST = {
-  url: 'https://open.spotify.com/playlist/0soLSTkWnbj8aYnB71n2Cf',
+  url: 'https://open.spotify.com/playlist/0soLSTkWnbj8aYnB71n2Cf?si=vPttIOgvTV-rANSsodgFWg&pt=4d52c6b40b43659b9b52e898242a168c&pi=mRttn89lRkae1',
   embedUrl: 'https://open.spotify.com/embed/playlist/0soLSTkWnbj8aYnB71n2Cf?utm_source=generator',
 }
