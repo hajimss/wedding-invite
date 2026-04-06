@@ -51,6 +51,15 @@ export type T = {
   playlist_intro: string
   playlist_cta: string
   lang_label: string
+  section_memories: string
+  memories_subtitle: string
+  memories_empty: string
+  upload_title: string
+  upload_name_placeholder: string
+  upload_cta: string
+  upload_success: string
+  upload_error_size: string
+  upload_error_type: string
 }
 
 const en: T = {
@@ -106,6 +115,15 @@ const en: T = {
     'Add a song to our wedding playlist — open Spotify and contribute a track that means something to you.',
   playlist_cta: 'Add a Song →',
   lang_label: 'MY',
+  section_memories: 'Our Memories',
+  memories_subtitle: 'Photos shared by our guests',
+  memories_empty: 'Be the first to share a memory',
+  upload_title: 'Share a Memory',
+  upload_name_placeholder: 'Your name',
+  upload_cta: 'Share Photo',
+  upload_success: 'Thanks {name}! Your photo is being reviewed.',
+  upload_error_size: 'Photo must be under 10MB.',
+  upload_error_type: 'Please upload an image file.',
 }
 
 const my: T = {
@@ -161,6 +179,15 @@ const my: T = {
     'Tambah lagu ke senarai lagu perkahwinan kami — buka Spotify dan sertakan lagu yang bermakna bagi anda.',
   playlist_cta: 'Tambah Lagu →',
   lang_label: 'EN',
+  section_memories: 'Kenangan Kami',
+  memories_subtitle: 'Gambar yang dikongsi tetamu kami',
+  memories_empty: 'Jadilah yang pertama berkongsi kenangan',
+  upload_title: 'Kongsi Kenangan',
+  upload_name_placeholder: 'Nama anda',
+  upload_cta: 'Hantar Foto',
+  upload_success: 'Terima kasih {name}! Foto anda sedang disemak.',
+  upload_error_size: 'Foto mestilah kurang daripada 10MB.',
+  upload_error_type: 'Sila muat naik fail imej.',
 }
 
 export const translations: Record<Lang, T> = { en, my }
