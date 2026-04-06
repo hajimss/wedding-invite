@@ -4,8 +4,8 @@ export const GUEST_TYPE_KEY = 'wedding-guest-type'
 
 export const TIMESLOTS: Record<GuestType, string> = {
   family: '10:00 AM',
-  'friends-parents': '11:00 PM',
-  'friends-couple': '12:00 PM',
+  'friends-parents': '11:00 AM',
+  'friends-couple': '1:00 PM',
 }
 
 export function isValidGuestType(value: string | null): value is GuestType {
