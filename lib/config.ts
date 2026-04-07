@@ -21,3 +21,7 @@ export const SPOTIFY_PLAYLIST = {
   url: 'https://open.spotify.com/playlist/0soLSTkWnbj8aYnB71n2Cf?si=vPttIOgvTV-rANSsodgFWg&pt=4d52c6b40b43659b9b52e898242a168c&pi=mRttn89lRkae1',
   embedUrl: 'https://open.spotify.com/embed/playlist/0soLSTkWnbj8aYnB71n2Cf?utm_source=generator',
 }
+
+export const PHOTO_WALL = {
+  folder: 'wedding',
+}

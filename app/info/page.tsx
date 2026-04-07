@@ -10,12 +10,22 @@ import LanguageToggle from '@/components/LanguageToggle'
 import TimeslotBadge from '@/components/TimeslotBadge'
 import MessageForm from '@/components/MessageForm'
 import SpotifyPlaylist from '@/components/SpotifyPlaylist'
+import MemoryWall from '@/components/MemoryWall'
+import type { Photo } from '@/lib/kv'
 import type { GuestType } from '@/lib/guest-type'
 
 export default function InfoPage() {
   const router = useRouter()
   const { t } = useTranslation()
   const [guestType, setGuestType] = useState<GuestType | null>(null)
+  const [photos, setPhotos] = useState<Photo[]>([])
+
+  useEffect(() => {
+    fetch('/api/photos')
+      .then((res) => res.json())
+      .then((data) => setPhotos(data.photos ?? []))
+      .catch(() => {})
+  }, [])
 
   useEffect(() => {
     const type = loadGuestType()
@@ -110,6 +120,15 @@ export default function InfoPage() {
         <section className="px-6 py-5 border-b border-stone-100">
           <SectionTitle>{t.section_playlist}</SectionTitle>
           <SpotifyPlaylist />
+        </section>
+
+        {/* Our Memories */}
+        <section className="px-6 py-5 border-b border-stone-100">
+          <SectionTitle>{t.section_memories}</SectionTitle>
+          <p className="font-sans text-[11px] text-gray-500 leading-6 mb-3">
+            {t.memories_subtitle}
+          </p>
+          <MemoryWall photos={photos} />
         </section>
 
         {/* Contact */}
