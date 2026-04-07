@@ -26,6 +26,7 @@ export type T = {
   info_date: string
   section_venue: string
   section_story: string
+  story: string
   section_message: string
   section_contact: string
   venue_directions: string
@@ -88,6 +89,7 @@ const en: T = {
   info_date: 'Saturday · 06 June 2026',
   section_venue: 'Venue',
   section_story: 'Our Message to You ❤️',
+  story: 'We\'ve shared a journey that brought us here today, and we couldn\'t be more grateful. Having you with us as we celebrate this moment would make it even more meaningful.',
   section_message: 'Send a Message',
   section_contact: 'Contact',
   venue_directions: 'Get Directions →',
@@ -152,6 +154,7 @@ const my: T = {
   info_date: 'Sabtu · 06 Jun 2026',
   section_venue: 'Lokasi',
   section_story: 'Mesej Kami untuk Anda ❤️',
+  story: 'Perjalanan kami dipenuhi dengan cinta, gelak tawa, dan kenangan indah. Kini, apabila kami melangkah ke fasa seterusnya, kami sangat berbesar hati jika anda dapat bersama kami meraikan hari istimewa ini.',
   section_message: 'Hantar Mesej',
   section_contact: 'Hubungi Kami',
   venue_directions: 'Dapatkan Arahan →',

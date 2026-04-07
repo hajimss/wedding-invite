@@ -111,7 +111,7 @@ export default function InfoPage() {
         {/* Our Story */}
         <section className="px-6 py-5 border-b border-stone-100">
           <SectionTitle>{t.section_story}</SectionTitle>
-          <p className="font-serif text-[15px] text-gray-600 italic leading-7">"{STORY}"</p>
+          <p className="font-serif text-[15px] text-gray-600 italic leading-7">"{t.story}"</p>
         </section>
 
         {/* Send a Message */}
