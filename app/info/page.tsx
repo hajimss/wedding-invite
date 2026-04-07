@@ -100,6 +100,10 @@ export default function InfoPage() {
             rel="noopener noreferrer"
             className="font-sans text-[10px] tracking-[2px] text-sage uppercase border-b border-sage/40 pb-0.5"
           >
+            <p className="font-serif text-[10px] lowercase text-gray-600 italic">
+              "sorry there's no free parking but i promise you it's cheap" -
+              hazim
+            </p>
             {t.venue_directions}
           </a>
         </section>
@@ -107,7 +111,7 @@ export default function InfoPage() {
         {/* Our Story */}
         <section className="px-6 py-5 border-b border-stone-100">
           <SectionTitle>{t.section_story}</SectionTitle>
-          <p className="font-serif text-[15px] text-gray-600 italic leading-7">"{STORY}"</p>
+          <p className="font-serif text-[15px] text-gray-600 italic leading-7">"{t.story}"</p>
         </section>
 
         {/* Send a Message */}
