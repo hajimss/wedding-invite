@@ -129,6 +129,12 @@ export default function InfoPage() {
             {t.memories_subtitle}
           </p>
           <MemoryWall photos={photos} />
+          <a
+            href="/upload"
+            className="inline-block mt-3 font-sans text-[10px] tracking-[2px] text-sage uppercase border-b border-sage/40 pb-0.5"
+          >
+            {t.upload_cta} →
+          </a>
         </section>
 
         {/* Contact */}
