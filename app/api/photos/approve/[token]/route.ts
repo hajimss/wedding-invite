@@ -22,9 +22,17 @@ export async function GET(
     })
   }
 
-  await updatePhotoStatus(photo, 'approved')
-  await addToApprovedSet(photo)
-  await removeToken(token)
+  try {
+    await updatePhotoStatus(photo, 'approved')
+    await addToApprovedSet(photo)
+    await removeToken(token)
+  } catch (err) {
+    console.error('[approve token]', err)
+    return new NextResponse(`<p>Error approving photo: ${String(err)}</p>`, {
+      status: 500,
+      headers: { 'Content-Type': 'text/html' },
+    })
+  }
 
   return NextResponse.redirect(new URL('/approved', request.url))
 }

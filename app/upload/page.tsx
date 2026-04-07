@@ -114,7 +114,7 @@ export default function UploadPage() {
               data-testid="photo-input"
               type="file"
               accept="image/*"
-              className="hidden"
+              className="sr-only"
               onChange={(e) => setFile(e.target.files?.[0] ?? null)}
             />
           </div>
