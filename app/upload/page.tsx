@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import { useTranslation } from '@/lib/language-context'
 import BotanicalBackground from '@/components/BotanicalBackground'
 import LanguageToggle from '@/components/LanguageToggle'
@@ -16,7 +16,6 @@ export default function UploadPage() {
   const [file, setFile] = useState<File | null>(null)
   const [state, setState] = useState<UploadState>('idle')
   const [errorMessage, setErrorMessage] = useState('')
-  const fileInputRef = useRef<HTMLInputElement>(null)
 
   function validate(): string | null {
     if (!name.trim()) return 'Name is required'
@@ -97,9 +96,9 @@ export default function UploadPage() {
           </div>
 
           <div className="mb-4">
-            <div
-              onClick={() => fileInputRef.current?.click()}
-              className="border-2 border-dashed border-stone-200 rounded-xl p-8 text-center cursor-pointer hover:border-sage transition-colors"
+            <label
+              htmlFor="photo-input"
+              className="block border-2 border-dashed border-stone-200 rounded-xl p-8 text-center cursor-pointer hover:border-sage transition-colors"
             >
               {file ? (
                 <p className="font-sans text-[12px] text-sage">{file.name}</p>
@@ -109,13 +108,13 @@ export default function UploadPage() {
                   <p className="font-sans text-[11px] text-gray-400">Tap to choose a photo</p>
                 </>
               )}
-            </div>
+            </label>
             <input
-              ref={fileInputRef}
+              id="photo-input"
               data-testid="photo-input"
               type="file"
               accept="image/*"
-              className="hidden"
+              className="sr-only"
               onChange={(e) => setFile(e.target.files?.[0] ?? null)}
             />
           </div>

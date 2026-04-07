@@ -13,21 +13,20 @@ export type Photo = {
 }
 
 export async function savePhoto(photo: Photo): Promise<void> {
-  await kv.set(`photo:${photo.id}`, JSON.stringify(photo))
+  await kv.set(`photo:${photo.id}`, photo)
   await kv.set(`token:${photo.token}`, photo.id)
 }
 
 export async function getPhotoByToken(token: string): Promise<Photo | null> {
   const id = await kv.get<string>(`token:${token}`)
   if (!id) return null
-  const raw = await kv.get<string>(`photo:${id}`)
-  if (!raw) return null
-  return JSON.parse(raw) as Photo
+  const photo = await kv.get<Photo>(`photo:${id}`)
+  return photo ?? null
 }
 
 export async function updatePhotoStatus(photo: Photo, status: PhotoStatus): Promise<Photo> {
   const updated: Photo = { ...photo, status }
-  await kv.set(`photo:${photo.id}`, JSON.stringify(updated))
+  await kv.set(`photo:${photo.id}`, updated)
   return updated
 }
 
@@ -44,8 +43,8 @@ export async function getApprovedPhotos(): Promise<Photo[]> {
   if (!ids || ids.length === 0) return []
   const photos = await Promise.all(
     ids.map(async (id) => {
-      const raw = await kv.get<string>(`photo:${id}`)
-      return raw ? (JSON.parse(raw) as Photo) : null
+      const photo = await kv.get<Photo>(`photo:${id}`)
+      return photo ?? null
     })
   )
   return photos.filter((p): p is Photo => p !== null)
