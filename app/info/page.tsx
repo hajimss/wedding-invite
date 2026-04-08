@@ -132,7 +132,7 @@ export default function InfoPage() {
         {/* Add to Calendar */}
         <section className="px-6 py-5 border-b border-stone-100">
           <SectionTitle>{t.section_calendar}</SectionTitle>
-          <p className="font-serif text-[15px] text-gray-600 italic leading-7 mb-3">{t.calendar_subtitle}</p>
+          <p className="font-sans text-[11px] text-gray-500 leading-6 mb-3">{t.calendar_subtitle}</p>
           <AddToCalendar />
         </section>
 
