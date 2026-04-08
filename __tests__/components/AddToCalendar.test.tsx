@@ -53,14 +53,13 @@ describe('AddToCalendar', () => {
     expect(URL.revokeObjectURL).toHaveBeenCalledWith('blob:fake')
   })
 
-  it('navigates via location.href on iOS', () => {
+  it('uses data URI path on iOS (no blob, no anchor click)', () => {
     Object.defineProperty(navigator, 'userAgent', { value: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0)', configurable: true })
     render(<AddToCalendar />)
+    // Should not throw even though location.href assignment fires
     fireEvent.click(screen.getByText('Apple Calendar'))
-    expect(URL.createObjectURL).toHaveBeenCalledWith(expect.any(Blob))
+    expect(URL.createObjectURL).not.toHaveBeenCalled()
     expect(HTMLAnchorElement.prototype.click).not.toHaveBeenCalled()
-    jest.runAllTimers()
-    expect(URL.revokeObjectURL).toHaveBeenCalledWith('blob:fake')
   })
 
   it('ICS blob contains correct event data', async () => {

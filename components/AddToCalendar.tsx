@@ -30,17 +30,16 @@ export default function AddToCalendar() {
       'END:VCALENDAR',
     ].join('\r\n') + '\r\n'
 
-    const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' })
-    const url = URL.createObjectURL(blob)
-
     const isIOS =
       /iPad|iPhone|iPod/.test(navigator.userAgent) ||
       (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
 
     if (isIOS) {
-      window.location.href = url
-      setTimeout(() => URL.revokeObjectURL(url), 1000)
+      // Data URI lets the OS intercept and open Calendar regardless of browser
+      window.location.href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics)
     } else {
+      const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' })
+      const url = URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = url
       a.download = 'wedding-hazim-idayu.ics'
