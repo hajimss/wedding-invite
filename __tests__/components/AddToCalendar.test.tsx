@@ -24,7 +24,8 @@ describe('AddToCalendar', () => {
     fireEvent.click(screen.getByText('Google Calendar'))
     expect(open).toHaveBeenCalledWith(
       expect.stringContaining('calendar.google.com'),
-      '_blank'
+      '_blank',
+      'noopener,noreferrer'
     )
   })
 
@@ -44,5 +45,24 @@ describe('AddToCalendar', () => {
     expect(URL.createObjectURL).toHaveBeenCalledWith(expect.any(Blob))
     expect(URL.revokeObjectURL).toHaveBeenCalledWith('blob:fake')
     expect(HTMLAnchorElement.prototype.click).toHaveBeenCalled()
+  })
+
+  it('ICS blob contains correct event data', async () => {
+    let capturedBlob: Blob | null = null
+    global.URL.createObjectURL = jest.fn((blob: Blob) => {
+      capturedBlob = blob
+      return 'blob:fake'
+    })
+    render(<AddToCalendar />)
+    fireEvent.click(screen.getByText('Apple Calendar'))
+    expect(capturedBlob).not.toBeNull()
+    const text = await new Promise<string>((resolve) => {
+      const reader = new FileReader()
+      reader.onload = () => resolve(reader.result as string)
+      reader.readAsText(capturedBlob!)
+    })
+    expect(text).toContain('SUMMARY:Hazim & Idayu Wedding')
+    expect(text).toContain('DTSTART;VALUE=DATE:20260606')
+    expect(text).toContain('LOCATION:Begonia Pavilion')
   })
 })

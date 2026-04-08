@@ -11,13 +11,14 @@ export default function AddToCalendar() {
       details: WEDDING_EVENT.description,
       location: WEDDING_EVENT.location,
     })
-    window.open(`https://calendar.google.com/calendar/render?${params}`, '_blank')
+    window.open(`https://calendar.google.com/calendar/render?${params}`, '_blank', 'noopener,noreferrer')
   }
 
   function handleApple() {
     const ics = [
       'BEGIN:VCALENDAR',
       'VERSION:2.0',
+      'PRODID:-//Hazim & Idayu Wedding//EN',
       'BEGIN:VEVENT',
       `DTSTART;VALUE=DATE:${WEDDING_EVENT.date}`,
       `DTEND;VALUE=DATE:${WEDDING_EVENT.dateEnd}`,
@@ -26,14 +27,16 @@ export default function AddToCalendar() {
       `DESCRIPTION:${WEDDING_EVENT.description}`,
       'END:VEVENT',
       'END:VCALENDAR',
-    ].join('\r\n')
+    ].join('\r\n') + '\r\n'
 
     const blob = new Blob([ics], { type: 'text/calendar' })
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
     a.href = url
     a.download = 'wedding-hazim-idayu.ics'
+    document.body.appendChild(a)
     a.click()
+    document.body.removeChild(a)
     URL.revokeObjectURL(url)
   }
 
