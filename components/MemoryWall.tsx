@@ -70,7 +70,7 @@ export default function MemoryWall({ photos }: { photos: Photo[] }) {
         {photos.map((photo, i) => (
           <div
             key={photo.id}
-            className="snap-start [scroll-snap-stop:always] flex-shrink-0 w-[calc(100%-104px)]"
+            className="snap-start [scroll-snap-stop:always] flex-shrink-0 w-full"
           >
             <div
               className={[
