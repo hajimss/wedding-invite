@@ -12,7 +12,7 @@ export default function RsvpPage() {
   const { t } = useTranslation()
   const [name, setName] = useState('')
   const [attendance, setAttendance] = useState<RsvpAttendance | null>(null)
-  const [pax, setPax] = useState(1)
+  const [pax, setPax] = useState('1')
   const [wish, setWish] = useState('')
   const [state, setState] = useState<RsvpState>('idle')
   const [error, setError] = useState('')
@@ -35,7 +35,7 @@ export default function RsvpPage() {
       const res = await fetch('/api/rsvp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: name.trim(), attendance, pax, wish: wish.trim() }),
+        body: JSON.stringify({ name: name.trim(), attendance, pax: Math.max(1, parseInt(pax) || 1), wish: wish.trim() }),
       })
       if (!res.ok) {
         const data = await res.json()
@@ -131,10 +131,17 @@ export default function RsvpPage() {
               </label>
               <input
                 id="pax-input"
-                type="number"
-                min={1}
+                type="text"
+                inputMode="numeric"
                 value={pax}
-                onChange={(e) => setPax(Math.max(1, parseInt(e.target.value) || 1))}
+                onChange={(e) => {
+                  const v = e.target.value.replace(/\D/g, '')
+                  setPax(v)
+                }}
+                onBlur={() => {
+                  if (!pax || parseInt(pax) < 1) setPax('1')
+                }}
+                placeholder="1"
                 className="w-full border border-stone-200 rounded-lg px-4 py-3 font-sans text-[13px] text-gray-700 bg-white focus:outline-none focus:border-sage"
               />
             </div>

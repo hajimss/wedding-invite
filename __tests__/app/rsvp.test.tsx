@@ -32,7 +32,7 @@ describe('RsvpPage', () => {
   it('shows pax input when attending is selected', () => {
     render(<Wrapper />)
     fireEvent.click(screen.getByRole('button', { name: /yes, i'll be there/i }))
-    expect(screen.getByRole('spinbutton')).toBeInTheDocument()
+    expect(screen.getByRole('textbox', { name: /how many/i })).toBeInTheDocument()
   })
 
   it('shows wish textarea when not-attending is selected', () => {
@@ -44,9 +44,9 @@ describe('RsvpPage', () => {
   it('hides pax when switching from attending to not-attending', () => {
     render(<Wrapper />)
     fireEvent.click(screen.getByRole('button', { name: /yes, i'll be there/i }))
-    expect(screen.getByRole('spinbutton')).toBeInTheDocument()
+    expect(screen.getByRole('textbox', { name: /how many/i })).toBeInTheDocument()
     fireEvent.click(screen.getByRole('button', { name: /sorry, can't make it/i }))
-    expect(screen.queryByRole('spinbutton')).not.toBeInTheDocument()
+    expect(screen.queryByRole('textbox', { name: /how many/i })).not.toBeInTheDocument()
   })
 
   it('shows error when name is blank on submit', async () => {
