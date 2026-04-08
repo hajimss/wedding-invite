@@ -61,6 +61,18 @@ export type T = {
   upload_success: string
   upload_error_size: string
   upload_error_type: string
+  section_rsvp: string
+  rsvp_subtitle: string
+  rsvp_cta: string
+  rsvp_name_placeholder: string
+  rsvp_attending: string
+  rsvp_not_attending: string
+  rsvp_pax_label: string
+  rsvp_wish_label: string
+  rsvp_wish_placeholder: string
+  rsvp_submit_btn: string
+  rsvp_success: string
+  rsvp_error: string
 }
 
 const en: T = {
@@ -126,6 +138,18 @@ const en: T = {
   upload_success: 'Thanks {name}! Your photo is being reviewed.',
   upload_error_size: 'Photo must be under 10MB.',
   upload_error_type: 'Please upload an image file.',
+  section_rsvp: 'RSVP',
+  rsvp_subtitle: "Let us know if you'll be joining us on the big day.",
+  rsvp_cta: 'RSVP Now',
+  rsvp_name_placeholder: 'Your full name',
+  rsvp_attending: "Yes, I'll be there",
+  rsvp_not_attending: "Sorry, can't make it",
+  rsvp_pax_label: 'How many people are coming? (including yourself)',
+  rsvp_wish_label: 'Send a wish (optional)',
+  rsvp_wish_placeholder: 'Wishing you both a beautiful day…',
+  rsvp_submit_btn: 'Confirm RSVP',
+  rsvp_success: "Thank you! We've noted your RSVP.",
+  rsvp_error: 'Something went wrong. Please try again.',
 }
 
 const my: T = {
@@ -191,6 +215,18 @@ const my: T = {
   upload_success: 'Terima kasih {name}! Foto anda sedang disemak.',
   upload_error_size: 'Foto mestilah kurang daripada 10MB.',
   upload_error_type: 'Sila muat naik fail imej.',
+  section_rsvp: 'RSVP',
+  rsvp_subtitle: 'Maklumkan kehadiran anda pada hari istimewa kami.',
+  rsvp_cta: 'RSVP Sekarang',
+  rsvp_name_placeholder: 'Nama penuh anda',
+  rsvp_attending: 'Ya, saya akan hadir',
+  rsvp_not_attending: 'Maaf, tidak dapat hadir',
+  rsvp_pax_label: 'Berapa ramai yang akan hadir? (termasuk anda)',
+  rsvp_wish_label: 'Hantar ucapan (pilihan)',
+  rsvp_wish_placeholder: 'Semoga hari istimewa kalian dipenuhi keberkatan…',
+  rsvp_submit_btn: 'Hantar RSVP',
+  rsvp_success: 'Terima kasih! Kami telah mencatat RSVP anda.',
+  rsvp_error: 'Ada masalah. Sila cuba lagi.',
 }
 
 export const translations: Record<Lang, T> = { en, my }
