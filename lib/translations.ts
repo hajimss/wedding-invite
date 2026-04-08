@@ -63,6 +63,8 @@ export type T = {
   upload_error_type: string
   section_rsvp: string
   rsvp_subtitle: string
+  section_calendar: string
+  calendar_subtitle: string
   rsvp_cta: string
   rsvp_name_placeholder: string
   rsvp_attending: string
@@ -140,6 +142,8 @@ const en: T = {
   upload_error_type: 'Please upload an image file.',
   section_rsvp: 'RSVP',
   rsvp_subtitle: "Let us know if you'll be joining us on the big day.",
+  section_calendar: 'Add to Calendar',
+  calendar_subtitle: 'A calendar invite, sir/ma\'am?',
   rsvp_cta: 'RSVP Now',
   rsvp_name_placeholder: 'Your full name',
   rsvp_attending: "Yes, I'll be there",
@@ -217,6 +221,8 @@ const my: T = {
   upload_error_type: 'Sila muat naik fail imej.',
   section_rsvp: 'RSVP',
   rsvp_subtitle: 'Maklumkan kehadiran anda pada hari istimewa kami.',
+  section_calendar: 'Tambah ke Kalendar',
+  calendar_subtitle: 'Jom simpan tarikh ni dulu?',
   rsvp_cta: 'RSVP Sekarang',
   rsvp_name_placeholder: 'Nama penuh anda',
   rsvp_attending: 'Ya, saya akan hadir',

@@ -25,3 +25,11 @@ export const SPOTIFY_PLAYLIST = {
 export const PHOTO_WALL = {
   folder: 'wedding',
 }
+
+export const WEDDING_EVENT = {
+  title: 'Hazim & Idayu Wedding',
+  date: '20260606',     // YYYYMMDD — all-day ICS/Google Calendar format
+  dateEnd: '20260607',  // exclusive end date (required by both formats)
+  location: 'Begonia Pavilion, 1 Pasir Ris Cl, Singapore 519599',
+  description: 'Join us as we celebrate our wedding day.',
+}
