@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useTranslation } from '@/lib/language-context'
 import BotanicalBackground from '@/components/BotanicalBackground'
 import LanguageToggle from '@/components/LanguageToggle'
+import AddToCalendar from '@/components/AddToCalendar'
 import type { RsvpAttendance } from '@/lib/kv'
 
 type RsvpState = 'idle' | 'loading' | 'success' | 'error'
@@ -55,6 +56,7 @@ export default function RsvpPage() {
       <div className="bg-white min-h-screen flex items-center justify-center px-8">
         <div className="text-center">
           <p className="font-serif text-[22px] text-sage italic">{t.rsvp_success}</p>
+          <AddToCalendar />
         </div>
       </div>
     )
