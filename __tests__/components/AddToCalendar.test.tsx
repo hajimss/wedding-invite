@@ -61,6 +61,7 @@ describe('AddToCalendar', () => {
       reader.onload = () => resolve(reader.result as string)
       reader.readAsText(capturedBlob!)
     })
+    expect(text).toContain('UID:wedding-hazim-idayu-20260606@hazimidayu.com')
     expect(text).toContain('SUMMARY:Hazim & Idayu Wedding')
     expect(text).toContain('DTSTART;VALUE=DATE:20260606')
     expect(text).toContain('LOCATION:Begonia Pavilion')

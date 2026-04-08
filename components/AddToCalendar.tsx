@@ -20,6 +20,7 @@ export default function AddToCalendar() {
       'VERSION:2.0',
       'PRODID:-//Hazim & Idayu Wedding//EN',
       'BEGIN:VEVENT',
+      'UID:wedding-hazim-idayu-20260606@hazimidayu.com',
       `DTSTART;VALUE=DATE:${WEDDING_EVENT.date}`,
       `DTEND;VALUE=DATE:${WEDDING_EVENT.dateEnd}`,
       `SUMMARY:${WEDDING_EVENT.title}`,
@@ -41,7 +42,7 @@ export default function AddToCalendar() {
   }
 
   return (
-    <div className="flex gap-2 mt-3">
+    <div className="flex flex-wrap gap-2 gap-y-2 mt-3">
       <button
         onClick={handleGoogle}
         className="font-sans text-[10px] tracking-[2px] text-sage uppercase border border-sage/40 rounded px-3 py-1.5"
