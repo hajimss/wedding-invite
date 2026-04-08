@@ -9,8 +9,10 @@ import {
   addToApprovedSet,
   removeToken,
   getApprovedPhotos,
+  saveRsvp,
+  getAllRsvps,
 } from '@/lib/kv'
-import type { Photo } from '@/lib/kv'
+import type { Photo, Rsvp } from '@/lib/kv'
 
 jest.mock('@vercel/kv', () => ({
   kv: {
@@ -112,6 +114,49 @@ describe('getApprovedPhotos', () => {
     mockKv.get.mockResolvedValueOnce(JSON.stringify(photo))
     mockKv.get.mockResolvedValueOnce(null)
     const result = await getApprovedPhotos()
+    expect(result).toHaveLength(1)
+  })
+})
+
+const rsvp: Rsvp = {
+  id: 'rsvp-id-1',
+  name: 'Ahmad',
+  attendance: 'attending',
+  pax: 2,
+  wish: '',
+  submittedAt: 2000000,
+}
+
+describe('saveRsvp', () => {
+  it('stores the RSVP object and adds to sorted set', async () => {
+    mockKv.set.mockResolvedValueOnce('OK' as never)
+    mockKv.zadd.mockResolvedValueOnce(1 as never)
+    await saveRsvp(rsvp)
+    expect(mockKv.set).toHaveBeenCalledWith('rsvp:rsvp-id-1', rsvp)
+    expect(mockKv.zadd).toHaveBeenCalledWith('rsvps:all', { score: 2000000, member: 'rsvp-id-1' })
+  })
+})
+
+describe('getAllRsvps', () => {
+  it('returns empty array when no RSVPs exist', async () => {
+    mockKv.zrange.mockResolvedValueOnce([])
+    const result = await getAllRsvps()
+    expect(result).toEqual([])
+  })
+
+  it('returns RSVPs in reverse chronological order', async () => {
+    mockKv.zrange.mockResolvedValueOnce(['rsvp-id-1'])
+    mockKv.get.mockResolvedValueOnce(rsvp)
+    const result = await getAllRsvps()
+    expect(result).toHaveLength(1)
+    expect(result[0]).toEqual(rsvp)
+  })
+
+  it('skips ids whose RSVP data is missing from KV', async () => {
+    mockKv.zrange.mockResolvedValueOnce(['rsvp-id-1', 'ghost-id'])
+    mockKv.get.mockResolvedValueOnce(rsvp)
+    mockKv.get.mockResolvedValueOnce(null)
+    const result = await getAllRsvps()
     expect(result).toHaveLength(1)
   })
 })

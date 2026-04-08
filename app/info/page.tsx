@@ -120,6 +120,20 @@ export default function InfoPage() {
           <MessageForm />
         </section>
 
+        {/* RSVP */}
+        <section className="px-6 py-5 border-b border-stone-100">
+          <SectionTitle>{t.section_rsvp}</SectionTitle>
+          <p className="font-sans text-[11px] text-gray-500 leading-6 mb-3">
+            {t.rsvp_subtitle}
+          </p>
+          <a
+            href="/rsvp"
+            className="inline-block font-sans text-[10px] tracking-[2px] text-sage uppercase border-b border-sage/40 pb-0.5"
+          >
+            {t.rsvp_cta} →
+          </a>
+        </section>
+
         {/* Playlist */}
         <section className="px-6 py-5 border-b border-stone-100">
           <SectionTitle>{t.section_playlist}</SectionTitle>

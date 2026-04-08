@@ -49,3 +49,33 @@ export async function getApprovedPhotos(): Promise<Photo[]> {
   )
   return photos.filter((p): p is Photo => p !== null)
 }
+
+// ── RSVP ──────────────────────────────────────────────────────────────────────
+
+export type RsvpAttendance = 'attending' | 'not-attending'
+
+export type Rsvp = {
+  id: string
+  name: string
+  attendance: RsvpAttendance
+  pax: number        // 0 when not attending
+  wish: string       // empty string when attending
+  submittedAt: number
+}
+
+export async function saveRsvp(rsvp: Rsvp): Promise<void> {
+  await kv.set(`rsvp:${rsvp.id}`, rsvp)
+  await kv.zadd('rsvps:all', { score: rsvp.submittedAt, member: rsvp.id })
+}
+
+export async function getAllRsvps(): Promise<Rsvp[]> {
+  const ids = await kv.zrange<string[]>('rsvps:all', 0, -1, { rev: true })
+  if (!ids || ids.length === 0) return []
+  const rsvps = await Promise.all(
+    ids.map(async (id) => {
+      const rsvp = await kv.get<Rsvp>(`rsvp:${id}`)
+      return rsvp ?? null
+    })
+  )
+  return rsvps.filter((r): r is Rsvp => r !== null)
+}

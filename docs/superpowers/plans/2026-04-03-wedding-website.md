@@ -6,7 +6,7 @@
 
 **Architecture:** Next.js 15 App Router with TypeScript. Guest type is persisted in `localStorage` (`wedding-guest-type`). The `/info` page reads it on mount and redirects to `/questionnaire` if absent. Language preference (`wedding-lang`) drives EN/MY string swaps via a React context. A `/api/send-message` Route Handler sends personalised wishes via Nodemailer SMTP.
 
-**Tech Stack:** Next.js 15 · TypeScript · Tailwind CSS · Nodemailer · Jest · React Testing Library · Vercel
+**Tech Stack:** Next.js 16 · TypeScript · Tailwind CSS v4 · Nodemailer · Jest · React Testing Library · Vercel
 
 ---
 
@@ -57,8 +57,8 @@ tailwind.config.ts
 - Create: `package.json` (via create-next-app)
 - Create: `jest.config.ts`
 - Create: `jest.setup.ts`
-- Modify: `tailwind.config.ts`
 - Modify: `.gitignore`
+- Note: No `tailwind.config.ts` — Tailwind v4 uses CSS-based config in `globals.css` via `@theme {}`
 
 - [ ] **Step 1: Scaffold the Next.js project**
 
