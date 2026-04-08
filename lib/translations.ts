@@ -128,7 +128,7 @@ const en: T = {
   contact_bride_role: 'Bride · Pengantin Perempuan',
   section_playlist: 'Our Playlist',
   playlist_intro:
-    'You need to join as a collaborator on Spotify before you can add a song. Tap the button below to open the playlist, then tap "Join" to become a collaborator.',
+    'Add a song to our wedding playlist — open Spotify and contribute a track that means something to you.',
   playlist_cta: 'Open Playlist & Join as Collaborator →',
   lang_label: 'MY',
   section_memories: 'Our Memories',
@@ -207,7 +207,7 @@ const my: T = {
   contact_bride_role: 'Pengantin Perempuan · Bride',
   section_playlist: 'Senarai Lagu Kami',
   playlist_intro:
-    'Anda perlu menyertai sebagai kolaborator di Spotify sebelum boleh menambah lagu. Ketik butang di bawah untuk buka senarai lagu, kemudian ketik "Join" untuk jadi kolaborator.',
+    'Tambah lagu ke senarai lagu perkahwinan kami — buka Spotify dan sertakan lagu yang bermakna bagi anda.',
   playlist_cta: 'Buka Senarai Lagu & Sertai sebagai Kolaborator →',
   lang_label: 'EN',
   section_memories: 'Kenangan Kami',
