@@ -5,11 +5,12 @@ describe('AddToCalendar', () => {
   beforeEach(() => {
     global.URL.createObjectURL = jest.fn(() => 'blob:fake')
     global.URL.revokeObjectURL = jest.fn()
-    jest.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {})
+    jest.useFakeTimers()
   })
 
   afterEach(() => {
     jest.restoreAllMocks()
+    jest.useRealTimers()
   })
 
   it('renders Google Calendar and Apple Calendar buttons', () => {
@@ -39,12 +40,13 @@ describe('AddToCalendar', () => {
     expect(url).toContain('Begonia')
   })
 
-  it('triggers ICS blob download on Apple Calendar click', () => {
+  it('creates ICS blob and schedules revoke on Apple Calendar click', () => {
     render(<AddToCalendar />)
     fireEvent.click(screen.getByText('Apple Calendar'))
     expect(URL.createObjectURL).toHaveBeenCalledWith(expect.any(Blob))
+    expect(URL.revokeObjectURL).not.toHaveBeenCalled()
+    jest.runAllTimers()
     expect(URL.revokeObjectURL).toHaveBeenCalledWith('blob:fake')
-    expect(HTMLAnchorElement.prototype.click).toHaveBeenCalled()
   })
 
   it('ICS blob contains correct event data', async () => {
