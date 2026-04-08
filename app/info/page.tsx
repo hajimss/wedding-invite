@@ -11,6 +11,7 @@ import TimeslotBadge from '@/components/TimeslotBadge'
 import MessageForm from '@/components/MessageForm'
 import SpotifyPlaylist from '@/components/SpotifyPlaylist'
 import MemoryWall from '@/components/MemoryWall'
+import AddToCalendar from '@/components/AddToCalendar'
 import type { Photo } from '@/lib/kv'
 import type { GuestType } from '@/lib/guest-type'
 
@@ -106,6 +107,7 @@ export default function InfoPage() {
             </p>
             {t.venue_directions}
           </a>
+          <AddToCalendar />
         </section>
 
         {/* Our Story */}
