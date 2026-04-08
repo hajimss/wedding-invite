@@ -114,12 +114,6 @@ export default function InfoPage() {
           <p className="font-serif text-[15px] text-gray-600 italic leading-7">"{t.story}"</p>
         </section>
 
-        {/* Send a Message */}
-        <section className="px-6 py-5 border-b border-stone-100">
-          <SectionTitle>{t.section_message}</SectionTitle>
-          <MessageForm />
-        </section>
-
         {/* RSVP */}
         <section className="px-6 py-5 border-b border-stone-100">
           <SectionTitle>{t.section_rsvp}</SectionTitle>
@@ -132,6 +126,12 @@ export default function InfoPage() {
           >
             {t.rsvp_cta} →
           </a>
+        </section>
+
+        {/* Send a Message */}
+        <section className="px-6 py-5 border-b border-stone-100">
+          <SectionTitle>{t.section_message}</SectionTitle>
+          <MessageForm />
         </section>
 
         {/* Playlist */}
