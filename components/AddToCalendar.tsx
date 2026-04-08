@@ -32,8 +32,23 @@ export default function AddToCalendar() {
 
     const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' })
     const url = URL.createObjectURL(blob)
-    window.location.href = url
-    setTimeout(() => URL.revokeObjectURL(url), 1000)
+
+    const isIOS =
+      /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+
+    if (isIOS) {
+      window.location.href = url
+      setTimeout(() => URL.revokeObjectURL(url), 1000)
+    } else {
+      const a = document.createElement('a')
+      a.href = url
+      a.download = 'wedding-hazim-idayu.ics'
+      document.body.appendChild(a)
+      a.click()
+      document.body.removeChild(a)
+      URL.revokeObjectURL(url)
+    }
   }
 
   return (

@@ -5,7 +5,12 @@ describe('AddToCalendar', () => {
   beforeEach(() => {
     global.URL.createObjectURL = jest.fn(() => 'blob:fake')
     global.URL.revokeObjectURL = jest.fn()
+    jest.spyOn(HTMLAnchorElement.prototype, 'click').mockImplementation(() => {})
     jest.useFakeTimers()
+    // Default: non-iOS (jsdom)
+    Object.defineProperty(navigator, 'userAgent', { value: 'Mozilla/5.0 (Macintosh)', configurable: true })
+    Object.defineProperty(navigator, 'platform', { value: 'MacIntel', configurable: true })
+    Object.defineProperty(navigator, 'maxTouchPoints', { value: 0, configurable: true })
   })
 
   afterEach(() => {
@@ -40,11 +45,20 @@ describe('AddToCalendar', () => {
     expect(url).toContain('Begonia')
   })
 
-  it('creates ICS blob and schedules revoke on Apple Calendar click', () => {
+  it('downloads ICS file with correct filename on non-iOS', () => {
     render(<AddToCalendar />)
     fireEvent.click(screen.getByText('Apple Calendar'))
     expect(URL.createObjectURL).toHaveBeenCalledWith(expect.any(Blob))
-    expect(URL.revokeObjectURL).not.toHaveBeenCalled()
+    expect(HTMLAnchorElement.prototype.click).toHaveBeenCalled()
+    expect(URL.revokeObjectURL).toHaveBeenCalledWith('blob:fake')
+  })
+
+  it('navigates via location.href on iOS', () => {
+    Object.defineProperty(navigator, 'userAgent', { value: 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0)', configurable: true })
+    render(<AddToCalendar />)
+    fireEvent.click(screen.getByText('Apple Calendar'))
+    expect(URL.createObjectURL).toHaveBeenCalledWith(expect.any(Blob))
+    expect(HTMLAnchorElement.prototype.click).not.toHaveBeenCalled()
     jest.runAllTimers()
     expect(URL.revokeObjectURL).toHaveBeenCalledWith('blob:fake')
   })
