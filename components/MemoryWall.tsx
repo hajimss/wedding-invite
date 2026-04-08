@@ -54,7 +54,7 @@ export default function MemoryWall({ photos }: { photos: Photo[] }) {
       <div
         ref={containerRef}
         role="region"
-        aria-label="Memories carousel"
+        aria-label={`${t.section_memories} carousel`}
         tabIndex={0}
         onScroll={handleScroll}
         onKeyDown={handleKeyDown}
@@ -84,6 +84,8 @@ export default function MemoryWall({ photos }: { photos: Photo[] }) {
               <img
                 src={photo.cloudinaryUrl}
                 alt={`Photo by ${photo.guestName}`}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
               {/* Guest name gradient overlay */}
@@ -99,13 +101,12 @@ export default function MemoryWall({ photos }: { photos: Photo[] }) {
 
       {/* Dot indicators — only shown when there are 2+ photos */}
       {photos.length >= 2 && (
-        <div role="tablist" className="flex gap-[5px] justify-center mt-3">
+        <div className="flex gap-[5px] justify-center mt-3">
           {photos.map((photo, i) => (
             <button
               key={photo.id}
-              role="tab"
-              aria-selected={i === activeIndex}
-              aria-label={`Photo ${i + 1}`}
+              aria-label={`Slide ${i + 1} of ${photos.length}`}
+              aria-current={i === activeIndex ? true : undefined}
               onClick={() => scrollToIndex(i)}
               className={[
                 'transition-all duration-300 rounded-full',

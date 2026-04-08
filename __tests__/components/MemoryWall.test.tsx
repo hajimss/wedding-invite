@@ -55,19 +55,20 @@ describe('MemoryWall', () => {
 
   it('does not show dot indicators for a single photo', () => {
     render(<Wrapper photos={[photo]} />)
-    expect(screen.queryByRole('tablist')).not.toBeInTheDocument()
+    expect(screen.queryByRole('button', { name: /slide 1 of 1/i })).not.toBeInTheDocument()
   })
 
   it('shows one dot per photo when there are multiple photos', () => {
     render(<Wrapper photos={[photo, photo2, photo3]} />)
-    expect(screen.getAllByRole('tab')).toHaveLength(3)
+    expect(screen.getAllByRole('button', { name: /^slide \d+ of 3$/i })).toHaveLength(3)
   })
 
   it('marks the first dot as active on initial render', () => {
     render(<Wrapper photos={[photo, photo2]} />)
-    const [first, second] = screen.getAllByRole('tab')
-    expect(first).toHaveAttribute('aria-selected', 'true')
-    expect(second).toHaveAttribute('aria-selected', 'false')
+    const first = screen.getByRole('button', { name: /slide 1 of 2/i })
+    const second = screen.getByRole('button', { name: /slide 2 of 2/i })
+    expect(first).toHaveAttribute('aria-current', 'true')
+    expect(second).not.toHaveAttribute('aria-current')
   })
 
   it('scrolls to slide 1 on ArrowRight from slide 0', () => {
