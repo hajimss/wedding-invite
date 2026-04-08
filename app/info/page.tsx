@@ -107,7 +107,6 @@ export default function InfoPage() {
             </p>
             {t.venue_directions}
           </a>
-          <AddToCalendar />
         </section>
 
         {/* Our Story */}
@@ -128,6 +127,13 @@ export default function InfoPage() {
           >
             {t.rsvp_cta} →
           </a>
+        </section>
+
+        {/* Add to Calendar */}
+        <section className="px-6 py-5 border-b border-stone-100">
+          <SectionTitle>{t.section_calendar}</SectionTitle>
+          <p className="font-serif text-[15px] text-gray-600 italic leading-7 mb-3">{t.calendar_subtitle}</p>
+          <AddToCalendar />
         </section>
 
         {/* Send a Message */}
