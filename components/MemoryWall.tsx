@@ -74,7 +74,7 @@ export default function MemoryWall({ photos }: { photos: Photo[] }) {
           >
             <div
               className={[
-                'relative h-[200px] rounded-2xl overflow-hidden bg-stone-100',
+                'relative aspect-[3/4] rounded-2xl overflow-hidden bg-stone-100',
                 'transition-opacity duration-300',
                 i === activeIndex
                   ? 'opacity-100 shadow-[0_4px_16px_rgba(0,0,0,0.15)]'
