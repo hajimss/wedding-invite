@@ -43,18 +43,17 @@ export default function HomePage() {
 
           <div className="w-14 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto my-5" />
 
-          <p className="font-sans text-[10px] tracking-[4px] text-gray-600 uppercase mb-1">
-            06 June 2026
-          </p>
-          <p className="font-sans text-[10px] tracking-[3px] text-gray-400 uppercase mb-9">
-            20 Zulhijjah 1447
-          </p>
-
-          <div className="inline-flex flex-col items-center bg-sage text-white rounded-2xl px-7 py-3.5 mb-9">
-            <span className="font-sans text-[9px] tracking-[3px] uppercase opacity-85 mb-1">
-              Ceremony
-            </span>
-            <span className="font-serif text-[40px] font-light leading-none">11AM – 4PM</span>
+          <div className="inline-flex flex-col items-center mb-9">
+            <p className="font-sans text-[10px] tracking-[4px] text-gray-600 uppercase mb-1">
+              06 June 2026
+            </p>
+            <p className="font-sans text-[9px] tracking-[3px] text-gray-400 uppercase mb-3">
+              20 Zulhijjah 1447
+            </p>
+            <div className="w-14 h-px bg-gradient-to-r from-transparent via-gold to-transparent mb-3" />
+            <p className="font-serif text-[32px] font-light text-gold leading-none tracking-wide">
+              11AM – 4PM
+            </p>
           </div>
 
           <p className="font-sans text-[10px] tracking-[3px] text-gray-300 uppercase">
