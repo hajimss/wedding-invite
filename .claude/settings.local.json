@@ -84,7 +84,8 @@
       "Read(//usr/**)",
       "Bash(cat jest.config*)",
       "Bash(git stash:*)",
-      "Bash(kill 7000)"
+      "Bash(kill 7000)",
+      "Bash(git tag:*)"
     ]
   }
 }

@@ -1,0 +1,18 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "wedding-dev",
+      "runtimeExecutable": "/usr/bin/env",
+      "runtimeArgs": [
+        "PATH=/Users/hazim/.nvm/versions/node/v22.16.0/bin:/usr/bin:/bin",
+        "node",
+        "/Users/hazim/Documents/Projects/wedding/node_modules/.bin/next",
+        "dev",
+        "--port",
+        "3010"
+      ],
+      "port": 3010
+    }
+  ]
+}
