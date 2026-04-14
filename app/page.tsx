@@ -51,7 +51,7 @@ export default function HomePage() {
               20 Zulhijjah 1447
             </p>
             <div className="w-14 h-px bg-gradient-to-r from-transparent via-gold to-transparent mb-3" />
-            <p className="font-serif text-[32px] font-light text-gold leading-none tracking-wide">
+            <p className="font-sans text-[28px] font-light text-gold leading-none tracking-widest">
               11AM – 4PM
             </p>
           </div>
