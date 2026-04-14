@@ -74,7 +74,7 @@ export default function MessageForm() {
           onChange={e => setName(e.target.value)}
           placeholder={t.msg_name_placeholder}
           required
-          className="w-full bg-white border border-stone-200 rounded-lg px-3 py-2 font-sans text-[12px] text-gray-800 outline-none focus:border-sage"
+          className="w-full bg-white border border-stone-200 rounded-lg px-3 py-2 font-sans text-[12px] text-gray-800 outline-none focus:border-sage transition-colors"
         />
       </div>
 
@@ -89,8 +89,8 @@ export default function MessageForm() {
             onClick={() => setRecipient(r.value)}
             className={`flex-1 border rounded-lg py-2 text-center transition-colors ${
               recipient === r.value
-                ? 'border-sage bg-green-50'
-                : 'border-stone-200 bg-white'
+                ? 'border-sage bg-sage/5'
+                : 'border-stone-200 bg-white hover:border-stone-300'
             }`}
           >
             <p className="font-sans text-[12px] text-gray-800">{r.label}</p>
@@ -109,7 +109,7 @@ export default function MessageForm() {
           placeholder={t.msg_message_placeholder}
           rows={4}
           required
-          className="w-full bg-white border border-stone-200 rounded-lg px-3 py-2 font-sans text-[12px] text-gray-800 outline-none focus:border-sage resize-none"
+          className="w-full bg-white border border-stone-200 rounded-lg px-3 py-2 font-sans text-[12px] text-gray-800 outline-none focus:border-sage resize-none transition-colors"
         />
       </div>
 
@@ -120,7 +120,7 @@ export default function MessageForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="w-full bg-sage text-white font-sans text-[11px] tracking-[3px] uppercase py-3 rounded-xl disabled:opacity-60"
+        className="w-full bg-sage text-white font-sans text-[11px] tracking-[3px] uppercase py-3 rounded-xl disabled:opacity-60 transition-opacity hover:opacity-90"
       >
         {status === 'loading' ? '...' : t.msg_send_btn}
       </button>

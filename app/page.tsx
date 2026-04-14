@@ -25,38 +25,45 @@ export default function HomePage() {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero zone */}
-      <div className="relative bg-white px-8 py-10 min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
+      <div className="relative bg-white px-6 py-10 min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
         <BotanicalBackground intensity="full" />
+        {/* Centre spotlight — lifts names off the botanical layer */}
+        <div className="absolute inset-0 z-[1] pointer-events-none bg-[radial-gradient(ellipse_70%_60%_at_50%_47%,white_25%,transparent_78%)]" />
         <LanguageToggle />
 
-        <div className="relative z-10">
-          <p className="font-sans text-[10px] tracking-[5px] text-sage uppercase mb-1">
-            {t.hero_ceremony_label}
-          </p>
-          <p className="font-sans text-[9px] tracking-[4px] text-gray-400 uppercase mb-8">
+        <div className="relative z-10 w-full">
+          {/* Editorial ceremony label with flanking hairlines */}
+          <div className="flex items-center gap-3 mb-2">
+            <div className="flex-1 h-px bg-sage/25" />
+            <p className="font-sans text-[9px] tracking-[5px] text-sage uppercase whitespace-nowrap">
+              {t.hero_ceremony_label}
+            </p>
+            <div className="flex-1 h-px bg-sage/25" />
+          </div>
+          <p className="font-sans text-[9px] tracking-[4px] text-gray-400 uppercase mb-10">
             {t.hero_ceremony_sub}
           </p>
 
-          <div className="font-script text-[53px] text-gold leading-tight">Hazim</div>
-          <div className="font-serif text-[22px] text-gray-400 font-light my-1">&amp;</div>
-          <div className="font-script text-[53px] text-gold leading-tight">Idayu</div>
+          <div className="font-script text-[74px] text-gold leading-[1.05]">Hazim</div>
+          <div className="font-serif text-[26px] text-gold/30 font-light mt-1 mb-3">&amp;</div>
+          <div className="font-script text-[74px] text-gold leading-[1.05]">Idayu</div>
 
-          <div className="w-14 h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto my-5" />
+          {/* Full-bleed architectural rule */}
+          <div className="-mx-6 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent my-7" />
 
-          <div className="inline-flex flex-col items-center mb-9">
-            <p className="font-sans text-[10px] tracking-[4px] text-gray-600 uppercase mb-1">
+          <div className="inline-flex flex-col items-center mb-10">
+            <p className="font-sans text-[14px] tracking-[5px] text-gray-700 uppercase mb-1.5">
               06 June 2026
             </p>
-            <p className="font-sans text-[9px] tracking-[3px] text-gray-400 uppercase mb-3">
+            <p className="font-sans text-[9px] tracking-[3px] text-gray-400 uppercase mb-5">
               20 Zulhijjah 1447
             </p>
-            <div className="w-14 h-px bg-gradient-to-r from-transparent via-gold to-transparent mb-3" />
-            <p className="font-sans text-[28px] font-light text-gold leading-none tracking-widest">
+            <p className="font-sans text-[42px] font-light text-gold leading-none tracking-[6px]">
               11AM – 4PM
             </p>
           </div>
 
-          <p className="font-sans text-[10px] tracking-[3px] text-gray-300 uppercase">
+          <p className="font-sans text-[10px] tracking-[3px] text-gray-400 uppercase motion-safe:animate-bounce">
             ↓ scroll for details
           </p>
         </div>
@@ -83,15 +90,15 @@ export default function HomePage() {
               title="Venue map"
             />
           </div>
+          <p className="font-serif text-[10px] lowercase text-gray-500 italic mb-2">
+            &ldquo;sorry there&rsquo;s no free parking but i promise you it&rsquo;s cheap&rdquo; — hazim
+          </p>
           <a
             href={VENUE.googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-sans text-[10px] tracking-[2px] text-sage uppercase border-b border-sage/40 pb-0.5"
+            className="font-sans text-[10px] tracking-[2px] text-sage uppercase border-b border-sage/40 pb-0.5 transition-opacity hover:opacity-70"
           >
-            <p className="font-serif text-[10px] lowercase text-gray-600 italic">
-              &ldquo;sorry there&rsquo;s no free parking but i promise you it&rsquo;s cheap&rdquo; - hazim
-            </p>
             {t.venue_directions}
           </a>
         </section>
@@ -110,7 +117,7 @@ export default function HomePage() {
           </p>
           <a
             href="/rsvp"
-            className="inline-block font-sans text-[10px] tracking-[2px] text-sage uppercase border-b border-sage/40 pb-0.5"
+            className="inline-block w-full text-center bg-sage text-white font-sans text-[11px] tracking-[3px] uppercase py-3 rounded-xl transition-opacity hover:opacity-90"
           >
             {t.rsvp_cta} →
           </a>
@@ -144,7 +151,7 @@ export default function HomePage() {
           <MemoryWall photos={photos} />
           <a
             href="/upload"
-            className="inline-block mt-3 font-sans text-[10px] tracking-[2px] text-sage uppercase border-b border-sage/40 pb-0.5"
+            className="inline-block mt-3 font-sans text-[10px] tracking-[2px] text-sage uppercase border-b border-sage/40 pb-0.5 transition-opacity hover:opacity-70"
           >
             {t.upload_cta} →
           </a>
@@ -207,7 +214,7 @@ function ContactRow({
       <div>
         <p className="font-sans text-[13px] text-gray-800">{name}</p>
         <p className="font-sans text-[10px] text-gray-400 tracking-wide mt-0.5">{role}</p>
-        <p className="font-sans font-light text-[12px] text-sage mt-0.5">{phone}</p>
+        <a href={`tel:${phone}`} className="font-sans font-light text-[12px] text-sage mt-0.5 transition-opacity hover:opacity-70">{phone}</a>
       </div>
     </div>
   )

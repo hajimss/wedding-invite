@@ -22,13 +22,13 @@ export default function AddToCalendar() {
     <div className="flex flex-wrap gap-2 gap-y-2 mt-3">
       <button
         onClick={handleGoogle}
-        className="font-sans text-[10px] tracking-[2px] text-sage uppercase border border-sage/40 rounded px-3 py-1.5"
+        className="font-sans text-[10px] tracking-[2px] text-sage uppercase border border-sage/40 rounded px-3 py-1.5 transition-colors hover:bg-sage/5 hover:border-sage"
       >
         Google Calendar
       </button>
       <button
         onClick={handleApple}
-        className="font-sans text-[10px] tracking-[2px] text-sage uppercase border border-sage/40 rounded px-3 py-1.5"
+        className="font-sans text-[10px] tracking-[2px] text-sage uppercase border border-sage/40 rounded px-3 py-1.5 transition-colors hover:bg-sage/5 hover:border-sage"
       >
         Apple Calendar
       </button>
