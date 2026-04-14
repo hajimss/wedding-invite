@@ -55,7 +55,6 @@ export default function HomePage() {
               Ceremony
             </span>
             <span className="font-serif text-[40px] font-light leading-none">11AM – 4PM</span>
-            <span className="font-sans text-[10px] tracking-[2px] opacity-80 mt-1">06 June 2026</span>
           </div>
 
           <p className="font-sans text-[10px] tracking-[3px] text-gray-300 uppercase">
