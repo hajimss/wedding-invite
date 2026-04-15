@@ -64,7 +64,7 @@ export default function HomePage() {
           </div>
 
           <p className="font-sans text-[10px] tracking-[3px] text-gray-400 uppercase motion-safe:animate-bounce">
-            ↓ scroll for details
+            {t.hero_scroll_cta}
           </p>
         </div>
       </div>
@@ -134,6 +134,20 @@ export default function HomePage() {
         <section className="px-6 py-5 border-b border-stone-100">
           <SectionTitle>{t.section_message}</SectionTitle>
           <MessageForm />
+        </section>
+
+        {/* Itinerary */}
+        <section className="px-6 py-5 border-b border-stone-100">
+          <SectionTitle>{t.section_itinerary}</SectionTitle>
+          <div className="flex flex-col items-center text-center py-5 gap-3">
+            <div className="w-8 h-8 rounded-full border border-gold/40 flex items-center justify-center text-gold/60 text-[15px]">
+              ◷
+            </div>
+            <p className="font-serif text-[15px] text-gray-700 italic">{t.itinerary_coming_soon}</p>
+            <p className="font-sans text-[10px] tracking-[0.5px] text-gray-400 leading-5 max-w-xs">
+              {t.itinerary_coming_soon_sub}
+            </p>
+          </div>
         </section>
 
         {/* Playlist */}

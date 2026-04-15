@@ -48,6 +48,10 @@ export type T = {
   msg_error: string
   contact_groom_role: string
   contact_bride_role: string
+  hero_scroll_cta: string
+  section_itinerary: string
+  itinerary_coming_soon: string
+  itinerary_coming_soon_sub: string
   section_playlist: string
   playlist_intro: string
   playlist_cta: string
@@ -126,6 +130,10 @@ const en: T = {
   msg_error: 'Something went wrong. Please try again.',
   contact_groom_role: 'Groom · Pengantin Lelaki',
   contact_bride_role: 'Bride · Pengantin Perempuan',
+  hero_scroll_cta: '↓ scroll for details',
+  section_itinerary: 'Itinerary',
+  itinerary_coming_soon: 'Programme to be announced',
+  itinerary_coming_soon_sub: "We're putting together a detailed schedule for the day — check back closer to the date.",
   section_playlist: 'Our Playlist',
   playlist_intro:
     'Add a song to our wedding playlist — open Spotify and contribute a track that means something to you.',
@@ -205,6 +213,10 @@ const my: T = {
   msg_error: 'Ralat berlaku. Sila cuba lagi.',
   contact_groom_role: 'Pengantin Lelaki · Groom',
   contact_bride_role: 'Pengantin Perempuan · Bride',
+  hero_scroll_cta: '↓ lanjut ke bawah untuk butiran',
+  section_itinerary: 'Jadual Aturcara',
+  itinerary_coming_soon: 'Aturcara akan diumumkan',
+  itinerary_coming_soon_sub: 'Kami sedang menyusun jadual terperinci untuk hari tersebut — semak semula menjelang tarikh majlis.',
   section_playlist: 'Senarai Lagu Kami',
   playlist_intro:
     'Tambah lagu ke senarai lagu perkahwinan kami — buka Spotify dan sertakan lagu yang bermakna bagi anda.',
