@@ -33,25 +33,27 @@ export default function HomePage() {
 
         <div className="relative z-10 w-full">
           {/* Editorial ceremony label with flanking hairlines */}
-          <div className="flex items-center gap-3 mb-2">
+          <div className="flex items-center gap-3 mb-2 animate-fade-up [animation-delay:0.15s]">
             <div className="flex-1 h-px bg-sage/25" />
             <p className="font-sans text-[9px] tracking-[5px] text-sage uppercase whitespace-nowrap">
               {t.hero_ceremony_label}
             </p>
             <div className="flex-1 h-px bg-sage/25" />
           </div>
-          <p className="font-sans text-[9px] tracking-[4px] text-gray-400 uppercase mb-10">
+          <p className="font-sans text-[9px] tracking-[4px] text-gray-400 uppercase mb-10 animate-fade-up [animation-delay:0.3s]">
             {t.hero_ceremony_sub}
           </p>
 
-          <div className="font-script text-[74px] text-gold leading-[1.05]">Hazim</div>
-          <div className="font-serif text-[26px] text-gold/30 font-light mt-1 mb-3">&amp;</div>
-          <div className="font-script text-[74px] text-gold leading-[1.05]">Idayu</div>
+          <div className="font-script text-[74px] text-gold leading-[1.05] animate-fade-up [animation-delay:0.5s]">Hazim</div>
+          <div className="font-serif text-[26px] text-gold/30 font-light mt-1 mb-3 animate-soft-pulse">
+            &amp;
+          </div>
+          <div className="font-script text-[74px] text-gold leading-[1.05] animate-fade-up [animation-delay:0.8s]">Idayu</div>
 
-          {/* Full-bleed architectural rule */}
-          <div className="-mx-6 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent my-7" />
+          {/* Full-bleed architectural rule — draws outward from centre */}
+          <div className="-mx-6 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent my-7 animate-draw-line [animation-delay:1.1s]" />
 
-          <div className="inline-flex flex-col items-center mb-10">
+          <div className="inline-flex flex-col items-center mb-10 animate-fade-up [animation-delay:1.25s]">
             <p className="font-sans text-[14px] tracking-[5px] text-gray-700 uppercase mb-1.5">
               06 June 2026
             </p>
@@ -63,9 +65,11 @@ export default function HomePage() {
             </p>
           </div>
 
-          <p className="font-sans text-[10px] tracking-[3px] text-gray-400 uppercase motion-safe:animate-bounce">
-            {t.hero_scroll_cta}
-          </p>
+          <div className="animate-fade-up [animation-delay:1.9s]">
+            <p className="font-sans text-[10px] tracking-[3px] text-gray-400 uppercase motion-safe:animate-bounce">
+              {t.hero_scroll_cta}
+            </p>
+          </div>
         </div>
       </div>
 

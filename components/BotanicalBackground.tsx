@@ -9,7 +9,7 @@ export default function BotanicalBackground({
 
   return (
     <svg
-      className="absolute inset-0 w-full h-full pointer-events-none"
+      className="absolute inset-0 w-full h-full pointer-events-none animate-botanical-drift"
       viewBox="0 0 390 720"
       xmlns="http://www.w3.org/2000/svg"
       style={{ opacity: o }}

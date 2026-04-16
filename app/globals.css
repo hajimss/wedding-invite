@@ -16,3 +16,57 @@ html,
 body {
   height: 100%;
 }
+
+/* ── Hero entrance animations ─────────────────────────────────────── */
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* Gold rule draws outward from centre */
+@keyframes draw-line {
+  from { transform: scaleX(0); opacity: 0; }
+  to   { transform: scaleX(1); opacity: 1; }
+}
+
+/* Botanicals breathe very slowly — barely perceptible organic life */
+@keyframes botanical-drift {
+  0%,  100% { transform: translate(0,    0);    }
+  30%        { transform: translate(2px, -3px); }
+  70%        { transform: translate(-2px, 2.5px); }
+}
+
+/* The "&" pulses softly — heartbeat of the invitation */
+@keyframes soft-pulse {
+  0%, 100% { opacity: 0.30; }
+  50%       { opacity: 0.52; }
+}
+
+/* Utility classes */
+.animate-fade-up {
+  animation: fade-up 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-draw-line {
+  transform-origin: center;
+  animation: draw-line 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-botanical-drift {
+  animation: botanical-drift 20s ease-in-out infinite;
+}
+
+.animate-soft-pulse {
+  animation: soft-pulse 5s ease-in-out infinite;
+}
+
+/* Respect reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-draw-line,
+  .animate-botanical-drift,
+  .animate-soft-pulse {
+    animation: none;
+  }
+}
