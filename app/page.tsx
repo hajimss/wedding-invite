@@ -169,7 +169,7 @@ export default function HomePage() {
           <MemoryWall photos={photos} />
           <a
             href="/upload"
-            className="inline-block mt-3 font-sans text-[10px] tracking-[2px] text-sage uppercase border-b border-sage/40 pb-0.5 transition-opacity hover:opacity-70"
+            className="inline-block w-full text-center bg-sage text-white font-sans text-[11px] tracking-[3px] uppercase py-3 rounded-xl transition-opacity hover:opacity-90 mt-3"
           >
             {t.upload_cta} →
           </a>
