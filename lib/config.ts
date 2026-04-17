@@ -18,7 +18,7 @@ export const STORY =
   'We\'ve shared a journey that brought us here today, and we couldn\'t be more grateful. Having you with us as we celebrate this moment would make it even more meaningful.'
 
 export const SPOTIFY_PLAYLIST = {
-  url: 'https://open.spotify.com/playlist/0soLSTkWnbj8aYnB71n2Cf?si=vPttIOgvTV-rANSsodgFWg&pt=4d52c6b40b43659b9b52e898242a168c&pi=mRttn89lRkae1',
+  url: 'https://open.spotify.com/playlist/0soLSTkWnbj8aYnB71n2Cf?si=L1pNWIqOSHOFWwHbV0HQyQ&pt=3de0ceaf98360273fac0195daa785c17&pi=cUWWJ7fFTbSV4',
   embedUrl: 'https://open.spotify.com/embed/playlist/0soLSTkWnbj8aYnB71n2Cf?utm_source=generator',
 }
 
