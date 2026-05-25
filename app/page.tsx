@@ -146,7 +146,7 @@ export default function HomePage() {
           <div className="relative pl-[44px]">
             <ItineraryItem time="10.00am" title={t.itinerary_event_nikah} />
             <ItineraryItem time="11.00am" title={t.itinerary_event_buffet} />
-            <ItineraryItem time="12.30pm" title={t.itinerary_event_reception} sub={t.itinerary_event_reception_sub} />
+            <ItineraryItem time="12.30pm" title={t.itinerary_event_reception} />
             <ItineraryItem time="2.15pm" title={t.itinerary_event_cake} />
             <ItineraryItem time="3.45pm" title={t.itinerary_event_end} />
           </div>

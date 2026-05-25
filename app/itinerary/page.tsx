@@ -88,7 +88,6 @@ export default function ItineraryPage() {
           <TimelineItem
             time="12.30pm"
             title={t.itinerary_event_reception}
-            sub={t.itinerary_event_reception_sub}
             dot="major"
           />
           <TimelineItem time="2.15pm" title={t.itinerary_event_cake} />
