@@ -143,14 +143,12 @@ export default function HomePage() {
         {/* Itinerary */}
         <section className="px-6 py-5 border-b border-stone-100">
           <SectionTitle>{t.section_itinerary}</SectionTitle>
-          <div className="flex flex-col items-center text-center py-5 gap-3">
-            <div className="w-8 h-8 rounded-full border border-gold/40 flex items-center justify-center text-gold/60 text-[15px]">
-              ◷
-            </div>
-            <p className="font-serif text-[15px] text-gray-700 italic">{t.itinerary_coming_soon}</p>
-            <p className="font-sans text-[10px] tracking-[0.5px] text-gray-400 leading-5 max-w-xs">
-              {t.itinerary_coming_soon_sub}
-            </p>
+          <div className="relative pl-[44px]">
+            <ItineraryItem time="10.00am" title={t.itinerary_event_nikah} />
+            <ItineraryItem time="11.00am" title={t.itinerary_event_buffet} />
+            <ItineraryItem time="12.30pm" title={t.itinerary_event_reception} sub={t.itinerary_event_reception_sub} />
+            <ItineraryItem time="2.15pm" title={t.itinerary_event_cake} />
+            <ItineraryItem time="3.45pm" title={t.itinerary_event_end} />
           </div>
         </section>
 
@@ -194,6 +192,19 @@ export default function HomePage() {
           />
         </section>
       </div>
+    </div>
+  )
+}
+
+function ItineraryItem({ time, title, sub, major }: { time: string; title: string; sub?: string; major?: boolean }) {
+  return (
+    <div className="relative mb-5 last:mb-0 group">
+      <div className={`absolute -left-[30px] top-1 w-2.5 h-2.5 rounded-full border-2 ${major ? 'bg-gold border-gold shadow-[0_0_0_3px_rgba(201,168,76,0.13)]' : 'bg-cream border-gold shadow-[0_0_0_2px_rgba(201,168,76,0.1)]'}`} />
+      {/* Line from dot bottom to next item — hidden on last */}
+      <div className="absolute -left-[25.5px] top-[14px] bottom-[-20px] w-px bg-stone-200 group-last:hidden" />
+      <p className="font-sans text-[9px] tracking-[2px] uppercase text-gold mb-0.5">{time}</p>
+      <p className="font-serif text-[13px] text-gray-800 leading-snug">{title}</p>
+      {sub && <p className="font-sans text-[10px] text-gray-400 mt-0.5 leading-relaxed">{sub}</p>}
     </div>
   )
 }

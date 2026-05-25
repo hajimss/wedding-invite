@@ -50,8 +50,18 @@ export type T = {
   contact_bride_role: string
   hero_scroll_cta: string
   section_itinerary: string
-  itinerary_coming_soon: string
-  itinerary_coming_soon_sub: string
+  itinerary_cta: string
+  itinerary_back: string
+  itinerary_page_label: string
+  itinerary_page_title: string
+  itinerary_page_sub: string
+  itinerary_event_nikah: string
+  itinerary_event_buffet: string
+  itinerary_event_reception: string
+  itinerary_event_reception_sub: string
+  itinerary_event_cake: string
+  itinerary_event_end: string
+  itinerary_closing_quote: string
   section_playlist: string
   playlist_intro: string
   playlist_cta: string
@@ -132,8 +142,17 @@ const en: T = {
   contact_bride_role: 'Bride · Pengantin Perempuan',
   hero_scroll_cta: '↓ scroll for details',
   section_itinerary: 'Itinerary',
-  itinerary_coming_soon: 'Programme to be announced',
-  itinerary_coming_soon_sub: "We're putting together a detailed schedule for the day — check back closer to the date.",
+  itinerary_cta: 'View Programme',
+  itinerary_back: '← Back',
+  itinerary_page_label: '06 June 2026 · Begonia Pavilion',
+  itinerary_page_title: 'Programme',
+  itinerary_page_sub: 'Wedding Session · 10.00am – 4.00pm',
+  itinerary_event_nikah: 'Nikah Ceremony',
+  itinerary_event_buffet: 'Buffet Commences',
+  itinerary_event_reception: 'Arrival of Hazim & Idayu. Kompang Time!',
+  itinerary_event_cake: 'Cake Cutting & Speeches',
+  itinerary_event_end: 'End of Event',
+  itinerary_closing_quote: 'We look forward to celebrating with you',
   section_playlist: 'Our Playlist',
   playlist_intro:
     'Add a song to our wedding playlist — open Spotify and contribute a track that means something to you.',
@@ -215,8 +234,17 @@ const my: T = {
   contact_bride_role: 'Pengantin Perempuan · Bride',
   hero_scroll_cta: '↓ lanjut ke bawah untuk butiran',
   section_itinerary: 'Jadual Aturcara',
-  itinerary_coming_soon: 'Aturcara akan diumumkan',
-  itinerary_coming_soon_sub: 'Kami sedang menyusun jadual terperinci untuk hari tersebut — semak semula menjelang tarikh majlis.',
+  itinerary_cta: 'Lihat Aturcara',
+  itinerary_back: '← Kembali',
+  itinerary_page_label: '06 Jun 2026 · Begonia Pavilion',
+  itinerary_page_title: 'Aturcara',
+  itinerary_page_sub: 'Sesi Majlis · 10.00pg – 4.00ptg',
+  itinerary_event_nikah: 'Majlis Akad Nikah',
+  itinerary_event_buffet: 'Hidangan Buffet Dibuka',
+  itinerary_event_reception: 'Ketibaan Hazim & Idayu. Kompang Time!',
+  itinerary_event_cake: 'Potong Kek & Ucapan',
+  itinerary_event_end: 'Majlis Tamat',
+  itinerary_closing_quote: 'Kami menantikan kehadiran anda bersama kami',
   section_playlist: 'Senarai Lagu Kami',
   playlist_intro:
     'Tambah lagu ke senarai lagu perkahwinan kami — buka Spotify dan sertakan lagu yang bermakna bagi anda.',
