@@ -58,7 +58,6 @@ export type T = {
   itinerary_event_nikah: string
   itinerary_event_buffet: string
   itinerary_event_reception: string
-  itinerary_event_reception_sub: string
   itinerary_event_cake: string
   itinerary_event_end: string
   itinerary_closing_quote: string
