@@ -23,7 +23,8 @@ export default function HomePage() {
   }, [])
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-cream min-h-screen">
+      <div className="max-w-sm mx-auto bg-white shadow-sm">
       {/* Hero zone */}
       <div className="relative bg-white px-6 py-10 min-h-screen flex flex-col items-center justify-center text-center overflow-hidden">
         <BotanicalBackground intensity="full" />
@@ -191,6 +192,7 @@ export default function HomePage() {
             phone={CONTACTS.idayu.phone}
           />
         </section>
+      </div>
       </div>
     </div>
   )
