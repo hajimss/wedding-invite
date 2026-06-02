@@ -45,4 +45,12 @@ describe('HomePage', () => {
     render(<Wrapper />)
     expect(screen.queryByRole('button', { name: /view info|see details|enter|continue/i })).not.toBeInTheDocument()
   })
+
+  it('renders the shuttle FYI callout with a link to the shuttle page', () => {
+    render(<Wrapper />)
+    expect(screen.getByText('Free Shuttle Bus')).toBeInTheDocument()
+    expect(screen.getByText('Available from Pasir Ris MRT to the venue')).toBeInTheDocument()
+    const link = screen.getByRole('link', { name: /view shuttle info/i })
+    expect(link).toHaveAttribute('href', 'https://www.downtowneast.com.sg/services/pasir-ris-mrt-shuttle')
+  })
 })

@@ -98,6 +98,21 @@ export default function HomePage() {
           <p className="font-serif text-[10px] lowercase text-gray-500 italic mb-2">
             &ldquo;sorry there&rsquo;s no free parking but i promise you it&rsquo;s cheap&rdquo; — hazim
           </p>
+          <div className="flex items-start gap-3 bg-sage/10 border border-sage/20 rounded-xl px-3 py-2.5 mb-3">
+            <span className="text-[18px] leading-none mt-0.5">🚌</span>
+            <div>
+              <p className="font-sans text-[9px] tracking-[2px] uppercase text-sage mb-0.5">{t.shuttle_label}</p>
+              <p className="font-sans text-[11px] text-gray-500 leading-5 mb-1">{t.shuttle_body}</p>
+              <a
+                href="https://www.downtowneast.com.sg/services/pasir-ris-mrt-shuttle"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-sans text-[10px] tracking-[1px] text-sage border-b border-sage/40 pb-0.5 transition-opacity hover:opacity-70"
+              >
+                {t.shuttle_link}
+              </a>
+            </div>
+          </div>
           <a
             href={VENUE.googleMapsUrl}
             target="_blank"
