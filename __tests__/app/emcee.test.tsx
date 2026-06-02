@@ -53,4 +53,11 @@ describe('EmceePage', () => {
     render(<EmceePage />)
     expect(screen.getByText('3 / 31 done')).toBeInTheDocument()
   })
+
+  it('shows a completion banner when all items are checked', () => {
+    const allIndices = Array.from({ length: 31 }, (_, i) => i)
+    localStorage.setItem('emcee-photo-queue', JSON.stringify(allIndices))
+    render(<EmceePage />)
+    expect(screen.getByText('All done!')).toBeInTheDocument()
+  })
 })

@@ -59,7 +59,9 @@ export default function EmceePage() {
     try {
       const stored = localStorage.getItem(STORAGE_KEY)
       if (stored) setChecked(new Set(JSON.parse(stored) as number[]))
-    } catch {}
+    } catch {
+      localStorage.removeItem(STORAGE_KEY)
+    }
   }, [])
 
   function markDone(index: number) {
@@ -163,6 +165,14 @@ export default function EmceePage() {
             )
           })}
         </div>
+
+        {/* All done banner */}
+        {activeIndex === -1 && (
+          <div className="mx-4 mb-3 bg-sage/10 border border-sage/20 rounded-xl px-4 py-3 text-center">
+            <p className="font-serif text-[15px] text-sage mb-0.5">All done!</p>
+            <p className="font-sans text-[10px] text-gray-400">Every group has been photographed.</p>
+          </div>
+        )}
 
         {/* Footer */}
         <div className="px-5 py-4 border-t border-stone-100">
