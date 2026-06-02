@@ -88,6 +88,9 @@ export type T = {
   rsvp_submit_btn: string
   rsvp_success: string
   rsvp_error: string
+  shuttle_label: string
+  shuttle_body: string
+  shuttle_link: string
 }
 
 const en: T = {
@@ -180,6 +183,9 @@ const en: T = {
   rsvp_submit_btn: 'Confirm RSVP',
   rsvp_success: "Thank you! We've noted your RSVP.",
   rsvp_error: 'Something went wrong. Please try again.',
+  shuttle_label: 'Free Shuttle Bus',
+  shuttle_body: 'Available from Pasir Ris MRT to the venue',
+  shuttle_link: 'View shuttle info →',
 }
 
 const my: T = {
@@ -272,6 +278,9 @@ const my: T = {
   rsvp_submit_btn: 'Hantar RSVP',
   rsvp_success: 'Terima kasih! Kami telah mencatat RSVP anda.',
   rsvp_error: 'Ada masalah. Sila cuba lagi.',
+  shuttle_label: 'Bas Ulang-Alik Percuma',
+  shuttle_body: 'Tersedia dari MRT Pasir Ris ke lokasi',
+  shuttle_link: 'Lihat maklumat bas →',
 }
 
 export const translations: Record<Lang, T> = { en, my }
