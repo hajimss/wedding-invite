@@ -33,3 +33,73 @@ export const WEDDING_EVENT = {
   location: 'Begonia Pavilion, 1 Pasir Ris Cl, Singapore 519599',
   description: 'Join us as we celebrate our wedding day.',
 }
+
+export type PhotoGroup = {
+  section?: string
+  category: 'bride' | 'groom' | 'both'
+  items: string[]
+}
+
+export const PHOTO_LIST: PhotoGroup[] = [
+  { items: ['Grand Photo: Burhan and Sulaiman Family'], category: 'both' },
+  {
+    section: 'Idayu — Bride Side',
+    category: 'bride',
+    items: [
+      'Burhan and Family',
+      'Paklong and Family',
+      'Nenek and Wan (both on wheelchair)',
+      'Cik Roha and Family',
+      'Keluarga dari Melaka',
+      'Keluarga dari KL',
+      'Keluarga dari Johor',
+    ],
+  },
+  {
+    section: 'Hazim — Groom Side',
+    category: 'groom',
+    items: [
+      'Sulaiman and Family',
+      'Keluarga besar Nemat',
+      'Keluarga besar Mohamad Ali',
+    ],
+  },
+  {
+    section: 'Idayu — Bride Side 2nd Round',
+    category: 'bride',
+    items: [
+      'fbaybeh',
+      'shireen, hada, syafiqah and su',
+      'wecreate studio (colleagues)',
+    ],
+  },
+  {
+    section: 'Hazim — Groom Side 2nd Round',
+    category: 'groom',
+    items: [
+      'Pasir ris sec friends',
+      'Mechanications',
+      'Fly my kite friends',
+      'DAH geng',
+      'iCHAMP and change team',
+    ],
+  },
+  { items: ['Cake Cutting'], category: 'both' },
+  { items: ["Hazim's Speech"], category: 'groom' },
+  { items: ["Idayu's Speech"], category: 'bride' },
+  { items: ["Du'a Selamat by Idayu's Pak Long"], category: 'bride' },
+  {
+    section: 'After Cake/Speech',
+    category: 'both',
+    items: [
+      'Taka/JL friends',
+      'Cik Safura and Family',
+      'Kakak Cute and Family',
+      'Chinese Family',
+      'Hi-5 Gang',
+      '+any adhoc',
+    ],
+  },
+  { items: ['Hazim & Idayu to walk around and mingle w the guests'], category: 'both' },
+  { items: ['Tamat'], category: 'both' },
+]
