@@ -60,4 +60,12 @@ describe('EmceePage', () => {
     render(<EmceePage />)
     expect(screen.getByText('All done!')).toBeInTheDocument()
   })
+
+  it('unchecks a done item when tapped', () => {
+    render(<EmceePage />)
+    fireEvent.click(screen.getByRole('button', { name: /done/i }))
+    expect(screen.getByText('1 / 31 done')).toBeInTheDocument()
+    fireEvent.click(screen.getByText('Grand Photo: Burhan and Sulaiman Family'))
+    expect(screen.getByText('0 / 31 done')).toBeInTheDocument()
+  })
 })

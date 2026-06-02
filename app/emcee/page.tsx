@@ -64,10 +64,11 @@ export default function EmceePage() {
     }
   }, [])
 
-  function markDone(index: number) {
+  function toggleItem(index: number) {
     setChecked(prev => {
       const next = new Set(prev)
-      next.add(index)
+      if (next.has(index)) next.delete(index)
+      else next.add(index)
       try {
         localStorage.setItem(STORAGE_KEY, JSON.stringify([...next]))
       } catch {}
@@ -124,9 +125,11 @@ export default function EmceePage() {
                     <div className={`flex-1 h-px ${styles.rule}`} />
                   </div>
                 )}
-                <div className={[
+                <div
+                  onClick={isDone ? () => toggleItem(item.flatIndex) : undefined}
+                  className={[
                   'flex items-center gap-3 rounded-xl px-3 py-2.5 border transition-all',
-                  isDone ? 'bg-green-50 border-green-200 opacity-60' : '',
+                  isDone ? 'bg-green-50 border-green-200 opacity-60 cursor-pointer hover:opacity-80' : '',
                   isActive ? 'bg-amber-50 border-gold border-2 shadow-[0_2px_8px_rgba(201,168,76,0.15)]' : '',
                   !isDone && !isActive ? styles.row : '',
                 ].join(' ')}>
@@ -154,7 +157,7 @@ export default function EmceePage() {
 
                   {isActive && (
                     <button
-                      onClick={() => markDone(item.flatIndex)}
+                      onClick={() => toggleItem(item.flatIndex)}
                       className="bg-gold text-white font-sans text-[9px] tracking-[1px] uppercase rounded-lg px-3 py-1.5 transition-opacity hover:opacity-80 flex-shrink-0"
                     >
                       Done
@@ -177,7 +180,7 @@ export default function EmceePage() {
         {/* Footer */}
         <div className="px-5 py-4 border-t border-stone-100">
           <p className="font-sans text-[10px] text-gray-300 text-center">
-            Tap &ldquo;Done&rdquo; to check off · Progress saves in browser
+            Tap &ldquo;Done&rdquo; to check off · Tap a checked item to uncheck
           </p>
         </div>
 
